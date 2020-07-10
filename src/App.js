@@ -4,17 +4,22 @@ import Landing from './Landing/Landing';
 import Signup from './Signup/Signup';
 import Login from './Login/Login';
 import Demo from './Demo/Demo'
-import { Route } from 'react-router-dom';
+import { Route , Switch , Redirect} from 'react-router-dom';
 
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Route exact path='/' component={Landing} />
-      <Route path='/Signup/' component={Signup} />
-      <Route path='/Login/' component={Login} />
-      <Route path='/Demo/' component={Demo} />
+      <Switch>
+        <Route exact path='/' >
+          <Redirect to='/home'/>
+        </Route>
+        <Route path='/home' component={Landing} />
+        <Route path='/Signup/' component={Signup} />
+        <Route path='/Login/' component={Login} />
+        <Route path='/Demo/' component={Demo} />
+      </Switch>
     </div>
   );
 }
