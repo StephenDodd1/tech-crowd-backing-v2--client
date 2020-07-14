@@ -1,0 +1,128 @@
+* {
+   background: whitesmoke;
+}
+.App {
+   display: block;
+   padding-top: 25px;
+   margin: auto;
+   width: 90%;
+   font-family: Arial, Helvetica, sans-serif;
+}
+header {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 15px;
+   padding-top: 5px;
+   border-radius: 12px;
+}
+nav {
+   align-self: flex-end;
+}
+nav>ul {
+   background: black;
+   border-top: dotted 2px;
+   border-bottom: dotted;
+   text-align: center;
+   list-style: none;
+}
+nav>ul>li {
+   margin: 5px;
+   background: black;
+   align-self: center;
+   list-style: none;
+   margin-left: -30px;
+   margin-right: 8px;
+}
+.nav-link {
+   background: black;
+   color: white;
+   text-shadow: gray 3px 3px;
+   font-weight: bold;
+   font-size: 24px;
+   align-self: center;
+   list-style: none;
+}
+h1 {
+   text-align: center;
+   background: black;
+   color: white;
+   text-shadow: gray 3px 3px;
+   width: 450px;
+   border-left: dotted 2px;
+   border-right: dotted 2px;
+   padding-bottom: 4px;
+   transform: rotate(357deg);
+   font-size: 45px
+}
+h2 {
+   text-align: center;
+   color: slategrey;
+   font-style: italic;
+   line-height:40px;
+   text-decoration: underline overline;
+   margin: 10px;
+}
+.right {
+   text-align: right;
+}
+ul {
+   list-style-type: none;
+}
+select {
+   height: 26px;
+   width: 126px;
+   margin-left: 10px;
+   border-radius: 4px;
+   background: white;
+}
+input {
+   height: 26px;
+   font-size: 18px;
+}
+label, select {
+   font-size: 20px
+}
+input, textarea {
+   border-radius: 4px;
+   width: 500px;
+   background: white;
+}
+textarea {
+   height: 150px;
+   
+}
+input:focus, textarea:focus {
+   background: lightsteelblue;
+}
+button {
+   border-radius: 4px;
+   background: lightgray;
+   height: 24px
+}
+a {
+   text-decoration: none;
+   color: black;
+   font-size: 17px;
+   background: lightgray;
+}
+@media only screen and (min-width: 820px){
+   h1 {
+      margin-top: -80px;
+   }
+}
+@media only screen and (min-width: 1020px){
+   h1 {
+      margin-top: -80px;
+      text-align: center;
+      background: black;
+      color: white;
+      text-shadow: gray 3px 3px;
+      width: 650px;
+      border-left: dotted 2px;
+      border-right: dotted 2px;
+      padding-bottom: 4px;
+      transform: rotate(357deg);
+      font-size: 55px
+   }
+}

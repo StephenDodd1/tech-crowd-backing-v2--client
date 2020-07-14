@@ -8,10 +8,10 @@ export default class Nav extends Component {
       return(
          <nav className='right'>
             <ul>
-               <li><Link to='../'>Home</Link></li>
-               <li><Link to='../Signup/'>Signup</Link></li>
-               <li><Link to='../Login/'>LOGIN</Link></li>
-               <li><Link to='../Demo/'>DEMO</Link></li>
+               <li><Link className = 'nav-link' to='../../../'>Home</Link></li>
+               <li><Link className = 'nav-link' to='../../../Signup/'>Signup</Link></li>
+               <li><Link className = 'nav-link' to='../../../Login/'>LOGIN</Link></li>
+               <li><Link className = 'nav-link' to='../../../Demo/'>DEMO</Link></li>
             </ul>
          </nav>
       )
