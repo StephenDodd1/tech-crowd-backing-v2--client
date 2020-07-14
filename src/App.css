@@ -63,6 +63,12 @@ h2 {
    text-decoration: underline overline;
    margin: 10px;
 }
+h5{
+   line-height:   0px;
+}
+.comment-content {
+   background: white;
+}
 .right {
    text-align: right;
 }
@@ -111,6 +117,15 @@ a {
    border-radius: 4px;
    padding: 4px;
    margin-bottom: 3px;
+   margin-left: -40px;
+}
+.comment-box {
+   border: 1.2px solid lightslategray;
+   background: white;
+   border-radius: 4px;
+   padding-top: -20px;
+   padding: 0px 15px 15px 15px;
+   margin-top: 3px;
    margin-left: -40px;
 }
 @media only screen and (min-width: 820px){

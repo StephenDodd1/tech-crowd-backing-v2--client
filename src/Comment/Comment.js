@@ -19,7 +19,6 @@ export default class Comment extends Component {
       
       return(
          <div>
-            <button>DELETE</button>
             <form>
                <textarea placeholder='Enter your comment here. Remember to be respectful.' />
                <button type='submit'>Submit</button>
