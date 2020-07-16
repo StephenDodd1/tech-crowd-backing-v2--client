@@ -104,7 +104,9 @@ input:focus, textarea:focus {
 button {
    border-radius: 4px;
    background: lightgray;
-   height: 24px
+   height: 24px;
+   margin-right: 3px;
+   font-size: 17px;
 }
 a {
    text-decoration: none;
@@ -127,6 +129,9 @@ a {
    padding: 0px 15px 15px 15px;
    margin-top: 3px;
    margin-left: -40px;
+}
+.submit-button {
+  margin-left: 3px;
 }
 @media only screen and (min-width: 820px){
    h1 {

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { Link, Route } from 'react-router-dom';
-import Comment from '../Comment/Comment';
+import { Link } from 'react-router-dom';
 import Post from '../Post/Post'
 
 export default class Demo extends Component {
@@ -10,7 +8,14 @@ export default class Demo extends Component {
          <div id='forum-container'>
             <div id='forum-controls'>
                <div id='button-container'>
-                  <button id='create-post-button' type = 'submit' className='right'><Link to='../../../CreatePost/'>+ Post</Link></button>
+                  <button id='create-post-button' 
+                     type = 'submit' 
+                     className='right'>
+                        <Link 
+                           to='../../../CreatePost/'>
+                              + Post
+                        </Link>
+                  </button>
                </div>
                <div id='search-barcontainer'>
                   <h5>Search:</h5>

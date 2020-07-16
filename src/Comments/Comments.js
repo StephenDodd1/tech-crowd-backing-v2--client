@@ -19,7 +19,6 @@ export default class Comments extends Component {
       })
       .then(res => res.json())
       .then(data => {
-         console.log(data)
          this.setState({comments: data})
       })
    }
@@ -27,11 +26,11 @@ export default class Comments extends Component {
    render() {
       return(
          <ul id='comments-box' >
-            {this.state.comments.map(comment => {
+            {this.state.comments.map((comment, i) => {
                return(
-                  <li className = 'comment-box'>
+                  <li className = 'comment-box' key={i}>
                      <h5>Posted by: {this.props.username} on {this.props.post_date}</h5>
-                     <p class='comment-content'>{comment.comment}</p>
+                     <p className='comment-content'>{comment.comment}</p>
                      <button>DELETE</button>
                   </li>
                )

@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Header from './Header/Header';
 import Landing from './Landing/Landing';
 import Signup from './Signup/Signup';
 import Login from './Login/Login';
 import Demo from './Demo/Demo';
-import Post from './Post/Post';
 import CreatePost from './CreatePost/CreatePost';
 import { Route , Switch , Redirect} from 'react-router-dom';
 import './App.css';
