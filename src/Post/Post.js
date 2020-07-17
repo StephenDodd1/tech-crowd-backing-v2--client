@@ -76,7 +76,7 @@ handleUpdate = (e) => {
                   </div>
                   <p>{post.content}</p>
                   <h4>Comments</h4>
-                  <Route path={`/Demo/${post.postId}/Comment/`} component={Comment} />
+                  <Route path={`/Demo/${post.postId}/Comment/`} render={() => <Comment postId={post.postId}/>} />
                   <Comments postId={post.postId} post_date={post.post_date} username={post.username}/>
                   
                </li>
