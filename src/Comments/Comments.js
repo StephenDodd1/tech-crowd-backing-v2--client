@@ -10,7 +10,7 @@ export default class Comments extends Component {
 
    handleDelete = (e) => {
       e.preventDefault();
-      fetch(`http://localhost:8000/content/comments/${this.state.commentId}`, {
+      fetch(`http://localhost:8000/api/comments/${e.target.value}`, {
          method: 'DELETE',
          mode: 'cors',
          credentials: 'same-origin',
@@ -19,9 +19,9 @@ export default class Comments extends Component {
          }
       })
    }
-
-   componentDidMount(){
-      fetch(`http://localhost:8000/content/${this.props.postId}/comments`, {
+   
+   componentDidMount() {
+      fetch(`http://localhost:8000/api/${this.props.postId}/comments`, {
          method: 'GET',
          mode: 'cors',
          credentials: 'same-origin',
@@ -33,7 +33,7 @@ export default class Comments extends Component {
       .then(data => {
          this.setState({comments: data})
       })
-   }
+}
 
    render() {
       return(
@@ -43,7 +43,7 @@ export default class Comments extends Component {
                   <li className = 'comment-box' key={i}>
                      <h5>Posted by: {this.props.username} on {this.props.post_date}</h5>
                      <p className='comment-content'>{comment.comment}</p>
-                     <button type='submit' onClick={this.handleDelete}>DELETE</button>
+                     <button type='click' onClick={this.handleDelete} value={comment.commentId} name={comment.userId}>DELETE</button>
                   </li>
                )
             })}

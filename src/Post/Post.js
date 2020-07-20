@@ -8,17 +8,18 @@ export default class Post extends Component {
    constructor(props){
       super(props);
       this.state = {
-         posts: []
+         posts: [
+            this.props.posts
+         ]
       }
    };
-
 handleUpdate = (e) => {
    e.preventDefault()
    const title  = e.target.title.value;
    const content = e.target.content.value;
    const type = e.target.type.value;
    const post =  {title, content, type};
-   fetch(`http://localhost:8000/content/posts/${e.target.post_id.value}`, {
+   fetch(`http://localhost:8000/api/posts/${e.target.post_id.value}`, {
       method: 'PATCH',
       mode: 'cors',
       credentials: 'same-origin',
@@ -34,8 +35,9 @@ handleUpdate = (e) => {
       return res.json()
    })
 }
+
    componentDidMount() {
-      fetch('http://localhost:8000/content/posts', {
+      fetch('http://localhost:8000/api/posts', {
          method: 'GET',
          mode: 'cors',
          credentials: 'same-origin',
@@ -48,15 +50,49 @@ handleUpdate = (e) => {
          this.setState({posts: data})
       })
    }
-
+   a = () => {
+      if(this.props.posts)
+         this.setState({posts: this.props.posts})
+   }
+   
    render() {
+     console.log(this.props.posts)
       return(
          <ul>
-            {this.state.posts.map((post,i) => {
+            {this.props.posts.length !== 0 ? this.props.posts.map((post,i) => {
             return (
                <li className={`${post.postId} 'post-box'`} key={i} >
                   <div id={post.title}>
-                     <h4 className='post-name'>{post.title}</h4><h5>Posted by: {post.username} on {post.post_date}</h5>
+                     <h4 className='post-name'>{post.title}</h4><h5>Posted by: {post.userId} on {post.date_posted}</h5>
+                     <button className='comment-button' ><Link to={`../../../Demo/${post.postId}/Comment/`}>+ Comment</Link></button>
+                     <button className='update-button' ><Link to={`../../../Demo/${post.postId}/Update`}>Update</Link></button>
+                     <Route exact path={`/Demo/${post.postId}/Update/`} render={() => {
+                     return(
+                        <UpdatePost 
+                           title={post.title} 
+                           type={post.type}
+                           content={post.content}
+                           username={post.username} 
+                           postId={post.postId} 
+                           handleUpdate={this.handleUpdate}
+                        />
+                     )
+                     }
+                  }/>
+                  <Route exact path='/Demo/'/>
+                  </div>
+                  <p>{post.content}</p>
+                  <h4>Comments</h4>
+                  <Route path={`/Demo/${post.postId}/Comment/`} render={() => <Comment postId={post.postId}/>} />
+                  <Comments postId={post.postId} post_date={post.post_date} username={post.username}/>
+               </li>
+               )}
+            )
+            : this.state.posts.map((post,i) => {
+            return (
+               <li className={`${post.postId} 'post-box'`} key={i} >
+                  <div id={post.title}>
+                     <h4 className='post-name'>{post.title}</h4><h5>Posted by: {post.userId} on {post.date_posted}</h5>
                      <button className='comment-button' ><Link to={`../../../Demo/${post.postId}/Comment/`}>+ Comment</Link></button>
                      <button className='update-button' ><Link to={`../../../Demo/${post.postId}/Update`}>Update</Link></button>
                      <Route exact path={`/Demo/${post.postId}/Update/`} render={() => {

@@ -6,8 +6,8 @@ export default class Comment extends Component {
    submitComment = (e) => {
       e.preventDefault();
       const comment = e.target.comment.value;
-      const addedComment = {comment}
-      fetch(`http://localhost:8000/content/${this.props.postId}/comment`, {
+      const addedComment = { comment }
+      fetch(`http://localhost:8000/api/${this.props.postId}/comment`, {
          method: 'POST',
          mode: 'cors',
          credentials: 'same-origin',
@@ -23,7 +23,7 @@ export default class Comment extends Component {
       return(
          <div>
             <form onSubmit={this.submitComment}>
-               <textarea placeholder='Enter your comment here. Remember to be respectful.' name='comment'/>
+               <textarea placeholder='Enter your comment here. Remember to be respectful.' name='comment'/><br/>
                <button type='submit'className='submit-button' >Submit</button>
                <button type='click' ><Link to='../../../Demo/' >Cancel</Link></button>
             </form>
