@@ -13,6 +13,21 @@ export default class Demo extends Component {
 
   static contextType = postsContext;
 
+  componentDidMount() {
+    fetch("http://localhost:8000/api/posts", {
+      method: "GET",
+      mode: "cors",
+      credentials: "same-origin",
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({ posts: data });
+      });
+  }
+
   searchPosts = (e) => {
     e.preventDefault();
     fetch(`http://localhost:8000/api/posts/${e.target.search.value}`, {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
-export default class Comment extends Component {
+class Comment extends Component {
 
    submitComment = (e) => {
       e.preventDefault();
@@ -17,6 +17,7 @@ export default class Comment extends Component {
          body: JSON.stringify(addedComment)
       })
       .then(res => res.json())
+      .then(this.props.history.push('/Demo'))
    }
    render() {
       
@@ -31,3 +32,4 @@ export default class Comment extends Component {
       )
    }
 }
+export default withRouter(Comment);
