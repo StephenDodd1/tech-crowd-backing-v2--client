@@ -22,11 +22,19 @@ export default class Demo extends Component {
       headers: {
         "Content-type": "application/json",
       },
-    }).then((posts) => posts.json()).then(data=> {
-       return this.setState({posts: data})
-  })
-  console.log(this.state.posts);
-}
+    })
+      .then((posts) => {
+        if (!posts) {
+          return posts.json("No results matched your search.");
+        } else {
+          return posts.json();
+        }
+      })
+      .then((data) => {
+        return this.setState({ posts: data });
+      });
+    e.target.reset();
+  };
   render() {
     return (
       <div id="forum-container">
@@ -38,14 +46,14 @@ export default class Demo extends Component {
           </div>
           <div id="search-barcontainer">
             <h5>Search:</h5>
-              <form onSubmit={this.searchPosts}>
-                <input
-                  placeholder="Type a company or technology, then press enter to search"
-                  id="search-bar-input"
-                  name="search"
-                />
-                <button type="submit">Search</button>
-              </form>
+            <form onSubmit={this.searchPosts}>
+              <input
+                placeholder="Type a company or technology, then press enter to search"
+                id="search-bar-input"
+                name="search"
+              />
+              <button type="submit">Search</button>
+            </form>
           </div>
         </div>
         <div id="posts-container">
