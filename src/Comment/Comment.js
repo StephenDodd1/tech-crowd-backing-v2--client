@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import config from '../config'
+import config from '../config';
 import { Link, withRouter } from 'react-router-dom'
 
 class Comment extends Component {
