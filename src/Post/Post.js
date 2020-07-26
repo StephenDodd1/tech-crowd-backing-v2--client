@@ -53,16 +53,6 @@ export default class Post extends Component {
                     <h5>
                       Posted by: {post.userId} on {post.date_posted}
                     </h5>
-                    <button className="comment-button">
-                      <Link to={`../../../Demo/${post.postId}/Comment/`}>
-                        + Comment
-                      </Link>
-                    </button>
-                    <button className="update-button">
-                      <Link to={`../../../Demo/${post.postId}/Update`}>
-                        Update
-                      </Link>
-                    </button>
                     <Route
                       exact
                       path={`/Demo/${post.postId}/Update/`}
@@ -82,6 +72,16 @@ export default class Post extends Component {
                     <Route exact path="/Demo/" />
                   </div>
                   <p>{post.content}</p>
+                  <button className="comment-button">
+                      <Link to={`../../../Demo/${post.postId}/Comment/`}>
+                        + Comment
+                      </Link>
+                    </button>
+                    <button className="update-button">
+                      <Link to={`../../../Demo/${post.postId}/Update`}>
+                        Update
+                      </Link>
+                    </button>
                   <h4>Comments</h4>
                   <Route
                     path={`/Demo/${post.postId}/Comment/`}
