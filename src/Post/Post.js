@@ -37,7 +37,9 @@ class Post extends Component {
       .then(this.setState({ posts: this.props.posts }))
       .then(this.props.history("/Demo"));
   };
-
+  updateComments = () => {
+    window.location.reload(false)
+  }
   componentDidUpdate() {
     if (this.props.posts !== this.state.posts) {
       this.setState({ posts: this.props.posts });
@@ -94,6 +96,7 @@ class Post extends Component {
                 postId={post.postId}
                 post_date={post.post_date}
                 username={post.username}
+                updateComments={this.updateComments}
               />
             </li>
           );

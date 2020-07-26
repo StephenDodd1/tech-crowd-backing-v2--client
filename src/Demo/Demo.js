@@ -53,6 +53,7 @@ export default class Demo extends Component {
       });
     e.target.reset();
   };
+
   render() {
     return (
       <div id="forum-container">
