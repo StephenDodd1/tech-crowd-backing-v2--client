@@ -19,7 +19,7 @@ export default class Post extends Component {
     const type = e.target.type.value;
     const post = { title, content, type };
     fetch(`${config.API_ENDPOINT}/api/posts/${e.target.post_id.value}`, {
-      method: "PUT",
+      method: "PATCH",
       mode: "cors",
       credentials: "same-origin",
       headers: {
