@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import config from '../config';
-import { Link, Route } from "react-router-dom";
+import config from "../config";
+import { Link, Route, withRouter} from "react-router-dom";
 import Comment from "../Comment/Comment";
 import Comments from "../Comments/Comments";
 import UpdatePost from "../UpdatePost/UpdatePost";
 
-export default class Post extends Component {
+class Post extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: this.props.posts
+      posts: this.props.posts,
     };
   }
   handleUpdate = (e) => {
@@ -24,79 +24,82 @@ export default class Post extends Component {
       credentials: "same-origin",
       headers: {
         "Content-type": "application/json",
-        'Authorization': `Bearer ${config.API_TOKEN}`
+        Authorization: `Bearer ${config.API_TOKEN}`,
       },
       body: JSON.stringify(post),
-    }).then((res) => {
-      if (!res.ok) {
-        throw new Error("Something went wrong");
-      }
-      return res.json();
-    });
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Something went wrong");
+        }
+        return res.json();
+      })
+      .then(this.setState({ posts: this.props.posts }))
+      .then(this.props.history("/Demo"));
   };
-  
+
   componentDidUpdate() {
-    if (this.props.posts !== this.state.posts){ this.setState({posts: this.props.posts})}
+    if (this.props.posts !== this.state.posts) {
+      this.setState({ posts: this.props.posts });
+    }
   }
 
   render() {
-    console.log('props', this.props.posts, 'state', this.state.posts)
+    console.log("props", this.props.posts, "state", this.state.posts);
 
-    console.log('props posts returned', this.props.posts);
+    console.log("props posts returned", this.props.posts);
     return (
       <ul>
-          {this.props.posts.map((post, i) => {
-              return (
-                <li className={`${post.postId} 'post-box'`} key={i}>
-                  <div id={post.title}>
-                    <h4 className="post-name">{post.title}</h4>
-                    <h5>
-                      Posted by: {post.userId} on {post.date_posted}
-                    </h5>
-                    <Route
-                      exact
-                      path={`/Demo/${post.postId}/Update/`}
-                      render={() => {
-                        return (
-                          <UpdatePost
-                            title={post.title}
-                            type={post.type}
-                            content={post.content}
-                            username={post.username}
-                            postId={post.postId}
-                            handleUpdate={this.handleUpdate}
-                          />
-                        );
-                      }}
-                    />
-                    <Route exact path="/Demo/" />
-                  </div>
-                  <p>{post.content}</p>
-                  <button className="comment-button">
-                      <Link to={`../../../Demo/${post.postId}/Comment/`}>
-                        + Comment
-                      </Link>
-                    </button>
-                    <button className="update-button">
-                      <Link to={`../../../Demo/${post.postId}/Update`}>
-                        Update
-                      </Link>
-                    </button>
-                  <h4>Comments</h4>
-                  <Route
-                    path={`/Demo/${post.postId}/Comment/`}
-                    render={() => <Comment postId={post.postId} />}
-                  />
-                  <Comments
-                    postId={post.postId}
-                    post_date={post.post_date}
-                    username={post.username}
-                  />
-                </li>
-              );
-            })
-          }
+        {this.props.posts.map((post, i) => {
+          return (
+            <li className={`${post.postId} 'post-box'`} key={i}>
+              <div id={post.title}>
+                <h4 className="post-name">{post.title}</h4>
+                <h5>
+                  Posted by: {post.userId} on {post.date_posted}
+                </h5>
+                <Route
+                  exact
+                  path={`/Demo/${post.postId}/Update/`}
+                  render={() => {
+                    return (
+                      <UpdatePost
+                        title={post.title}
+                        type={post.type}
+                        content={post.content}
+                        username={post.username}
+                        postId={post.postId}
+                        handleUpdate={this.handleUpdate}
+                      />
+                    );
+                  }}
+                />
+                <Route exact path="/Demo/" />
+              </div>
+              <p>{post.content}</p>
+              <button className="comment-button">
+                <Link to={`../../../Demo/${post.postId}/Comment/`}>
+                  + Comment
+                </Link>
+              </button>
+              <button className="update-button">
+                <Link to={`../../../Demo/${post.postId}/Update`}>Update</Link>
+              </button>
+              <h4>Comments</h4>
+              <Route
+                path={`/Demo/${post.postId}/Comment/`}
+                render={() => <Comment postId={post.postId} />}
+              />
+              <Comments
+                postId={post.postId}
+                post_date={post.post_date}
+                username={post.username}
+              />
+            </li>
+          );
+        })}
       </ul>
     );
   }
 }
+export default withRouter(Post)
