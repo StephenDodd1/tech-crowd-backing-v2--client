@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import config from '../config'
 import { Link, withRouter } from 'react-router-dom'
 
 class Comment extends Component {
@@ -7,12 +8,13 @@ class Comment extends Component {
       e.preventDefault();
       const comment = e.target.comment.value;
       const addedComment = { comment }
-      fetch(`http://localhost:8000/api/${this.props.postId}/comment`, {
+      fetch(`${config.API_ENDPOINT}/api/${this.props.postId}/comment`, {
          method: 'POST',
          mode: 'cors',
          credentials: 'same-origin',
          headers: {
-            'Content-type': 'application/json'
+            'Content-type': 'application/json',
+            'Authorization': `Bearer ${config.API_KEY}`
          },
          body: JSON.stringify(addedComment)
       })

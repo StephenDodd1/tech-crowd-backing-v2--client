@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import config from '../config'
 
 export default class CreatePost extends Component {
    createPost = (e) => {
@@ -14,12 +15,13 @@ export default class CreatePost extends Component {
          content
       }
       console.log(type, title, content, userid)
-      fetch(`http://localhost:8000/api/posts`, {
+      fetch(`${config.API_ENDPOINT}/api/posts`, {
          method: 'POST',
          mode: 'cors',
          credentials: 'same-origin',
          headers: {
-            'Content-type': 'application/json'
+            'Content-type': 'application/json',
+            'Authorization': `Bearer ${config.API_KEY}`
          },
          body: JSON.stringify(newPost)
       })

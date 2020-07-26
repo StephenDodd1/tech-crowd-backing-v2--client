@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import config from '../config';
 import { Link, Route } from "react-router-dom";
 import Comment from "../Comment/Comment";
 import Comments from "../Comments/Comments";
@@ -17,12 +18,13 @@ export default class Post extends Component {
     const content = e.target.content.value;
     const type = e.target.type.value;
     const post = { title, content, type };
-    fetch(`http://localhost:8000/api/posts/${e.target.post_id.value}`, {
+    fetch(`${config.API_ENDPOINT}/api/posts/${e.target.post_id.value}`, {
       method: "PATCH",
       mode: "cors",
       credentials: "same-origin",
       headers: {
         "Content-type": "application/json",
+        'Authorization': `Bearer ${config.API_KEY}`
       },
       body: JSON.stringify(post),
     }).then((res) => {

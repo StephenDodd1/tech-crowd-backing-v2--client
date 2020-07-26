@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import config from '../config';
 
 export default class Signup extends Component {
   handleSignup = (e) => {
@@ -22,12 +23,13 @@ export default class Signup extends Component {
       const ln = t.lastname.value;
       const dob = t.dob.value;
       const user = { email, password, username, fn, ln, dob };
-      fetch("http://localhost:8000/api/users", {
+      fetch(`${config.API_ENDPOINT}/api/users`, {
         method: "POST",
         mode: "cors",
         credentials: "same-origin",
         headers: {
           "Content-type": "application/json",
+          'Authorization': `Bearer ${config.API_KEY}`
         },
         body: JSON.stringify(user),
       }).then((res) => {

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import config from '../config';
 
 export default class Comments extends Component {
   constructor(props) {
@@ -11,12 +12,13 @@ export default class Comments extends Component {
   handleDelete = (e) => {
     e.preventDefault();
     console.log(e.target.value)
-    fetch(`http://localhost:8000/api/comments/${e.target.value}`, {
+    fetch(`${config.API_ENDPOINT}/api/comments/${e.target.value}`, {
       method: "DELETE",
       mode: "cors",
       credentials: "same-origin",
       headers: {
         "Content-type": "application/json",
+        'Authorization': `Bearer ${config.API_KEY}`
       },
     }).then(
       this.setState({
@@ -28,12 +30,13 @@ export default class Comments extends Component {
   };
 
   componentDidMount() {
-    fetch(`http://localhost:8000/api/${this.props.postId}/comments`, {
+    fetch(`${config.API_ENDPOINT}/api/${this.props.postId}/comments`, {
       method: "GET",
       mode: "cors",
       credentials: "same-origin",
       headers: {
         "Content-type": "application/json",
+        'Authorization': `Bearer ${config.API_KEY}`
       },
     })
       .then((res) => res.json())

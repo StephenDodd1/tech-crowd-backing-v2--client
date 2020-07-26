@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import config from '../config';
 import { Link } from "react-router-dom";
 import Post from "../Post/Post";
 import postsContext from "../Context";
@@ -14,12 +15,13 @@ export default class Demo extends Component {
   static contextType = postsContext;
 
   componentDidMount() {
-    fetch("http://localhost:8000/api/posts", {
+    fetch(`${config.API_ENDPOINT}/api/posts`, {
       method: "GET",
       mode: "cors",
       credentials: "same-origin",
       headers: {
         "Content-type": "application/json",
+        'Authorization': `Bearer ${config.API_KEY}`
       },
     })
       .then((res) => res.json())
@@ -30,12 +32,13 @@ export default class Demo extends Component {
 
   searchPosts = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:8000/api/posts/${e.target.search.value}`, {
+    fetch(`${config.API_ENDPOINT}/api/posts/${e.target.search.value}`, {
       method: "GET",
       mode: "cors",
       credentials: "same-origin",
       headers: {
         "Content-type": "application/json",
+        'Authorization': `Bearer ${config.API_KEY}`
       },
     })
       .then((posts) => {
