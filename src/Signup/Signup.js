@@ -29,7 +29,7 @@ export default class Signup extends Component {
         credentials: "same-origin",
         headers: {
           "Content-type": "application/json",
-          'Authorization': `Bearer ${config.API_KEY}`
+          'Authorization': `Bearer ${config.API_TOKEN}`
         },
         body: JSON.stringify(user),
       }).then((res) => {

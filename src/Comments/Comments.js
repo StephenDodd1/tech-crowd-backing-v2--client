@@ -18,7 +18,7 @@ export default class Comments extends Component {
       credentials: "same-origin",
       headers: {
         "Content-type": "application/json",
-        'Authorization': `Bearer ${config.API_KEY}`
+        'Authorization': `Bearer ${config.API_TOKEN}`
       },
     }).then(
       this.setState({
@@ -36,7 +36,7 @@ export default class Comments extends Component {
       credentials: "same-origin",
       headers: {
         "Content-type": "application/json",
-        'Authorization': `Bearer ${config.API_KEY}`
+        'Authorization': `Bearer ${config.API_TOKEN}`
       },
     })
       .then((res) => res.json())
