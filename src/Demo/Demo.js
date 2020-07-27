@@ -2,17 +2,17 @@ import React, { Component } from "react";
 import config from '../config';
 import { Link } from "react-router-dom";
 import Post from "../Post/Post";
-import Context from "../Context";
+import postsContext from "../Context";
 
 export default class Demo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: this.props.posts,
+      posts: [],
     };
   }
 
-  static contextType = Context;
+  static contextType = postsContext;
 
   componentDidMount() {
     fetch(`${config.API_ENDPOINT}/api/posts`, {
@@ -54,6 +54,10 @@ export default class Demo extends Component {
     e.target.reset();
   };
 
+  updatePosts = () => {
+    window.location.reload(false)
+  }
+  
   render() {
     return (
       <div id="forum-container">

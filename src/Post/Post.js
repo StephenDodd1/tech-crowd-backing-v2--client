@@ -14,6 +14,7 @@ class Post extends Component {
     };
   }
   static ContextType = Context;
+  
   handleUpdate = (e) => {
     e.preventDefault();
     const title = e.target.title.value;
