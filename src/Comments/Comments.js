@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import config from '../config';
+import config from "../config";
 
 export default class Comments extends Component {
   constructor(props) {
@@ -11,20 +11,21 @@ export default class Comments extends Component {
 
   handleDelete = (e) => {
     e.preventDefault();
-    console.log(e.target.value)
+    console.log(e.target.value);
     fetch(`${config.API_ENDPOINT}/api/comments/${e.target.value}`, {
       method: "DELETE",
       mode: "cors",
       credentials: "same-origin",
       headers: {
         "Content-type": "application/json",
-        'Authorization': `Bearer ${config.API_TOKEN}`
+        Authorization: `Bearer ${config.API_TOKEN}`,
       },
     }).then(
       this.setState({
-        comments: this.state.comments.filter(
-          (comments) => {console.log(comments.commentId); return comments.commentId !== Number(e.target.value)}
-        ),
+        comments: this.state.comments.filter((comments) => {
+          console.log(comments.commentId);
+          return comments.commentId !== Number(e.target.value);
+        }),
       })
     );
   };
@@ -36,7 +37,7 @@ export default class Comments extends Component {
       credentials: "same-origin",
       headers: {
         "Content-type": "application/json",
-        'Authorization': `Bearer ${config.API_TOKEN}`
+        Authorization: `Bearer ${config.API_TOKEN}`,
       },
     })
       .then((res) => res.json())
@@ -61,7 +62,7 @@ export default class Comments extends Component {
                 value={comment.commentId}
                 name={comment.userId}
               >
-                DELETE
+                <i class="fa fa-minus-square-o" aria-hidden="true"></i>
               </button>
             </li>
           );
