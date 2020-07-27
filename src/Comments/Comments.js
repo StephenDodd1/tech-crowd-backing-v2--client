@@ -57,12 +57,14 @@ export default class Comments extends Component {
               </h5>
               <p className="comment-content">{comment.comment}</p>
               <button
+                className="delete-button"
                 type="click"
                 onClick={this.handleDelete}
                 value={comment.commentId}
                 name={comment.userId}
               >
--              </button>
+                &#8212;
+              </button>
             </li>
           );
         })}
