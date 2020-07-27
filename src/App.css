@@ -121,7 +121,9 @@ button {
    height: 21px;
    width: 21px;
    padding-bottom: 5px;
-   font-size: 9px;
+   font-size: 8px;
+   line-height: 20px;
+   font-weight: bold
 }
 a {
   text-decoration: none;
