@@ -63,7 +63,7 @@ export default class Comments extends Component {
                 value={comment.commentId}
                 name={comment.userId}
               >
-                &#8212;
+                -
               </button>
             </li>
           );
