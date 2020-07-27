@@ -4,6 +4,7 @@ import { Link, Route, withRouter} from "react-router-dom";
 import Comment from "../Comment/Comment";
 import Comments from "../Comments/Comments";
 import UpdatePost from "../UpdatePost/UpdatePost";
+import FontAwesome from 'react-fontawesome'
 
 class Post extends Component {
   constructor(props) {
@@ -56,7 +57,13 @@ class Post extends Component {
           return (
             <li className={`${post.postId} 'post-box'`} key={i}>
               <div id={post.title}>
-                <h4 className="post-name">{post.title}</h4>
+                <h4 className="post-name">{post.title}</h4><FontAwesome
+        className="super-crazy-colors"
+        name="pencil-square-o"
+        size="2x"
+        spin
+        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
+      />
                 <h5>
                   Posted by: {post.userId} on {post.date_posted}
                 </h5>
