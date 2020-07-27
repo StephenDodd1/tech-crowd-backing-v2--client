@@ -138,10 +138,11 @@ a {
   flex-direction: row;
 }
 
-.fa, a>i {
+a>.fa {
   margin-left: 12px;
   background: whitesmoke;
-  vertical-align: center;
+  align-self: center;
+  font-size: 25px;
 }
 .comment-box {
   border: 1.2px solid lightslategray;
