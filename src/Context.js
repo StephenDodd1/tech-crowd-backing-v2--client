@@ -1,9 +1,10 @@
 import React from 'react';
 
 
-const postsContext = React.createContext({
+const Context = React.createContext({
    posts: [],
+   comments: [],
    userAuth: false
 })
 
-export default postsContext;
+export default Context;

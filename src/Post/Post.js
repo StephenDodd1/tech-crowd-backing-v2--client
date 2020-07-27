@@ -4,6 +4,7 @@ import { Link, Route, withRouter } from "react-router-dom";
 import Comment from "../Comment/Comment";
 import Comments from "../Comments/Comments";
 import UpdatePost from "../UpdatePost/UpdatePost";
+import Context from "../Context";
 
 class Post extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class Post extends Component {
       posts: this.props.posts,
     };
   }
+  static ContextType = Context;
   handleUpdate = (e) => {
     e.preventDefault();
     const title = e.target.title.value;
