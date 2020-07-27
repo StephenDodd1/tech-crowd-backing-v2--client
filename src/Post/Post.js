@@ -57,7 +57,9 @@ class Post extends Component {
             <li className={`${post.postId} 'post-box'`} key={i}>
               <div id={post.title}>
                 <h4 className="post-name">{post.title}</h4>
-                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                <Link to={`../../../Demo/${post.postId}/Update`}>
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </Link>
                 <h5>
                   Posted by: {post.userId} on {post.date_posted}
                 </h5>
@@ -79,14 +81,11 @@ class Post extends Component {
                 />
                 <Route exact path="/Demo/" />
               </div>
-              <p>{post.content}</p>
+              <p className='post-content'>{post.content}</p>
               <button className="comment-button">
                 <Link to={`../../../Demo/${post.postId}/Comment/`}>
                   + Comment
                 </Link>
-              </button>
-              <button className="update-button">
-                <Link to={`../../../Demo/${post.postId}/Update`}>Update</Link>
               </button>
               <h4>Comments</h4>
               <Route
