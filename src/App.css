@@ -1,177 +1,180 @@
 * {
-   background: whitesmoke;
+  background: whitesmoke;
 }
 .App {
-   display: block;
-   padding-top: 25px;
-   margin: auto;
-   width: 90%;
-   font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  padding-top: 25px;
+  margin: auto;
+  width: 90%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 header {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   padding: 15px;
-   padding-top: 5px;
-   border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  padding-top: 5px;
+  border-radius: 12px;
 }
 nav {
-   align-self: flex-end;
+  align-self: flex-end;
 }
-nav>ul {
-   background: black;
-   border-top: dotted 2px;
-   border-bottom: dotted;
-   text-align: center;
-   list-style: none;
+nav > ul {
+  background: black;
+  border-top: dotted 2px;
+  border-bottom: dotted;
+  text-align: center;
+  list-style: none;
 }
-nav>ul>li {
-   margin: 5px;
-   background: black;
-   align-self: center;
-   list-style: none;
-   margin-left: -30px;
-   margin-right: 8px;
+nav > ul > li {
+  margin: 5px;
+  background: black;
+  align-self: center;
+  list-style: none;
+  margin-left: -30px;
+  margin-right: 8px;
 }
 .nav-link {
-   background: black;
-   color: white;
-   text-shadow: gray 3px 3px;
-   font-weight: bold;
-   font-size: 24px;
-   align-self: center;
-   list-style: none;
+  background: black;
+  color: white;
+  text-shadow: gray 3px 3px;
+  font-weight: bold;
+  font-size: 24px;
+  align-self: center;
+  list-style: none;
 }
 h1 {
-   text-align: center;
-   background: black;
-   color: white;
-   text-shadow: gray 3px 3px;
-   width: 450px;
-   border-left: dotted 2px;
-   border-right: dotted 2px;
-   padding-bottom: 4px;
-   transform: rotate(357deg);
-   font-size: 45px
+  text-align: center;
+  background: black;
+  color: white;
+  text-shadow: gray 3px 3px;
+  width: 450px;
+  border-left: dotted 2px;
+  border-right: dotted 2px;
+  padding-bottom: 4px;
+  transform: rotate(357deg);
+  font-size: 45px;
 }
 h2 {
-   text-align: center;
-   color: slategrey;
-   font-style: italic;
-   line-height:40px;
-   text-decoration: underline overline;
-   margin: 10px;
+  text-align: center;
+  color: slategrey;
+  font-style: italic;
+  line-height: 40px;
+  text-decoration: underline overline;
+  margin: 10px;
 }
-h5{
-   line-height:   0px;
+h5 {
+  line-height: 0px;
 }
 .comment-content {
-   background: white;
+  background: white;
 }
 .right {
-   text-align: right;
+  text-align: right;
 }
 ul {
-   list-style-type: none;
+  list-style-type: none;
 }
 select {
-   height: 26px;
-   width: 126px;
-   margin-left: 10px;
-   border-radius: 4px;
-   background: white;
+  height: 26px;
+  width: 126px;
+  margin-left: 10px;
+  border-radius: 4px;
+  background: white;
 }
 input {
-   height: 26px;
-   font-size: 18px;
-   margin-bottom: 10px;
+  height: 26px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
-label, select {
-   font-size: 20px;
+label,
+select {
+  font-size: 20px;
 }
-label{
-   display: inline-block;
-   width: 200px;
-   text-align: right;
-   padding-right: 10px;
+label {
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+  padding-right: 10px;
 }
-input, textarea {
-   border-radius: 4px;
-   width: 500px;
-   background: white;
+input,
+textarea {
+  border-radius: 4px;
+  width: 500px;
+  background: white;
 }
 textarea {
-   height: 150px;
-   
+  height: 150px;
 }
-input:focus, textarea:focus {
-   background: lightsteelblue;
+input:focus,
+textarea:focus {
+  background: lightsteelblue;
 }
 button {
-   border-radius: 4px;
-   background: lightgray;
-   height: 24px;
-   margin-right: 3px;
-   font-size: 17px;
+  border-radius: 4px;
+  background: lightgray;
+  height: 24px;
+  margin-right: 3px;
+  font-size: 17px;
 }
 a {
-   text-decoration: none;
-   color: black;
-   font-size: 17px;
-   background: lightgray;
+  text-decoration: none;
+  color: black;
+  font-size: 17px;
+  background: lightgray;
 }
 .post-box {
-   border: 1.2px solid black;
-   border-radius: 4px;
-   padding: 4px;
-   margin-bottom: 3px;
-   margin-left: -40px;
+  border: 1.2px solid black;
+  border-radius: 4px;
+  padding: 4px;
+  margin-bottom: 3px;
+  margin-left: -40px;
 }
 .post-content {
-   line-height:28px;
+  line-height: 28px;
 }
 .title-container {
-   display: flex;
-   flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
-i i>a {
-   margin-left: 12px;
-   background: whitesmoke;
-   vertical-align: middle;
+
+i, a>i {
+  margin-left: 12px;
+  background: whitesmoke;
+  vertical-align: center;
 }
 .comment-box {
-   border: 1.2px solid lightslategray;
-   background: white;
-   border-radius: 4px;
-   padding-top: -20px;
-   padding: 0px 15px 15px 15px;
-   margin-top: 3px;
-   margin-left: -40px;
+  border: 1.2px solid lightslategray;
+  background: white;
+  border-radius: 4px;
+  padding-top: -20px;
+  padding: 0px 15px 15px 15px;
+  margin-top: 3px;
+  margin-left: -40px;
 }
 .submit-button {
   margin-left: 3px;
 }
 .submit-post {
-   margin-left: 60px;
+  margin-left: 60px;
 }
-@media only screen and (min-width: 820px){
-   h1 {
-      margin-top: -80px;
-   }
+@media only screen and (min-width: 820px) {
+  h1 {
+    margin-top: -80px;
+  }
 }
-@media only screen and (min-width: 1020px){
-   h1 {
-      margin-top: -80px;
-      text-align: center;
-      background: black;
-      color: white;
-      text-shadow: gray 3px 3px;
-      width: 650px;
-      border-left: dotted 2px;
-      border-right: dotted 2px;
-      padding-bottom: 4px;
-      transform: rotate(357deg);
-      font-size: 55px
-   }
+@media only screen and (min-width: 1020px) {
+  h1 {
+    margin-top: -80px;
+    text-align: center;
+    background: black;
+    color: white;
+    text-shadow: gray 3px 3px;
+    width: 650px;
+    border-left: dotted 2px;
+    border-right: dotted 2px;
+    padding-bottom: 4px;
+    transform: rotate(357deg);
+    font-size: 55px;
+  }
 }
