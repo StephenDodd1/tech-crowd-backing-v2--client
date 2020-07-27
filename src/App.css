@@ -119,6 +119,8 @@ button {
 }
 .delete-button {
    height: 21px;
+   width: 21px;
+   padding-bottom: 5px;
 }
 a {
   text-decoration: none;
