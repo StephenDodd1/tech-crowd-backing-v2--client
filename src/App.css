@@ -140,12 +140,12 @@ a {
 .fa-container {
    display: flex;
    flex-direction: row;
-   align-content: center;
    background: whitesmoke;
 }
 a>.fa {
   margin-left: 12px;
   font-size: 25px;
+  padding-top: 15px;
 }
 .comment-box {
   border: 1.2px solid lightslategray;
