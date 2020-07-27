@@ -132,7 +132,8 @@ a {
    line-height:28px;
 }
 .title-container {
-   display: inline-block;
+   display: flex;
+   flex-direction: row;
 }
 i {
    margin-left: 12px;
