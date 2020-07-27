@@ -135,9 +135,10 @@ a {
    display: flex;
    flex-direction: row;
 }
-i {
+i i>a {
    margin-left: 12px;
    background: whitesmoke;
+   vertical-align: middle;
 }
 .comment-box {
    border: 1.2px solid lightslategray;

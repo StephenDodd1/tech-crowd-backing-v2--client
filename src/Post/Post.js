@@ -81,12 +81,13 @@ class Post extends Component {
                 }}
               />
               <Route exact path="/Demo/" />
-
               <p className="post-content">{post.content}</p>
-              <h4>Comments</h4>
-              <Link to={`../../../Demo/${post.postId}/Comment/`}>
-                <i class="fa fa-plus-square-o" aria-hidden="true"></i>
-              </Link>
+              <div className='title-container'>
+                <h4>Comments</h4>
+                <Link to={`../../../Demo/${post.postId}/Comment/`}>
+                  <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                </Link>
+              </div>
               <Route
                 path={`/Demo/${post.postId}/Comment/`}
                 render={() => <Comment postId={post.postId} />}
