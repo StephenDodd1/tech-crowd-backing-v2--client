@@ -62,8 +62,7 @@ export default class Comments extends Component {
                 value={comment.commentId}
                 name={comment.userId}
               >
-                <i class="fa fa-minus-square-o" aria-hidden="true"></i>
-              </button>
+-              </button>
             </li>
           );
         })}
