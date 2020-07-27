@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import config from "../config";
-import { Link, Route, withRouter} from "react-router-dom";
+import { Link, Route, withRouter } from "react-router-dom";
 import Comment from "../Comment/Comment";
 import Comments from "../Comments/Comments";
 import UpdatePost from "../UpdatePost/UpdatePost";
@@ -38,8 +38,8 @@ class Post extends Component {
       .then(this.props.history("/Demo"));
   };
   updateComments = () => {
-    window.location.reload(false)
-  }
+    window.location.reload(false);
+  };
   componentDidUpdate() {
     if (this.props.posts !== this.state.posts) {
       this.setState({ posts: this.props.posts });
@@ -55,40 +55,38 @@ class Post extends Component {
         {this.props.posts.map((post, i) => {
           return (
             <li className={`${post.postId} 'post-box'`} key={i}>
-              <div className='title-container' id={post.title}>
+              <div className="title-container" id={post.title}>
                 <h4 className="post-name">{post.title}</h4>
                 <Link to={`../../../Demo/${post.postId}/Update`}>
                   <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                 </Link>
-                </div>
-                <h5>
-                  Posted by: {post.userId} on {post.date_posted}
-                </h5>
-                <Route
-                  exact
-                  path={`/Demo/${post.postId}/Update/`}
-                  render={() => {
-                    return (
-                      <UpdatePost
-                        title={post.title}
-                        type={post.type}
-                        content={post.content}
-                        username={post.username}
-                        postId={post.postId}
-                        handleUpdate={this.handleUpdate}
-                      />
-                    );
-                  }}
-                />
-                <Route exact path="/Demo/" />
-              
-              <p className='post-content'>{post.content}</p>
-              <button className="comment-button">
-                <Link to={`../../../Demo/${post.postId}/Comment/`}>
-                  + Comment
-                </Link>
-              </button>
+              </div>
+              <h5>
+                Posted by: {post.userId} on {post.date_posted}
+              </h5>
+              <Route
+                exact
+                path={`/Demo/${post.postId}/Update/`}
+                render={() => {
+                  return (
+                    <UpdatePost
+                      title={post.title}
+                      type={post.type}
+                      content={post.content}
+                      username={post.username}
+                      postId={post.postId}
+                      handleUpdate={this.handleUpdate}
+                    />
+                  );
+                }}
+              />
+              <Route exact path="/Demo/" />
+
+              <p className="post-content">{post.content}</p>
               <h4>Comments</h4>
+              <Link to={`../../../Demo/${post.postId}/Comment/`}>
+                <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+              </Link>
               <Route
                 path={`/Demo/${post.postId}/Comment/`}
                 render={() => <Comment postId={post.postId} />}
@@ -106,4 +104,4 @@ class Post extends Component {
     );
   }
 }
-export default withRouter(Post)
+export default withRouter(Post);

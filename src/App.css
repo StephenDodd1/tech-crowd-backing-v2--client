@@ -137,6 +137,7 @@ a {
 }
 i {
    margin-left: 12px;
+   background: whitesmoke;
 }
 .comment-box {
    border: 1.2px solid lightslategray;
