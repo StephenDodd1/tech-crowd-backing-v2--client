@@ -57,8 +57,8 @@ class Post extends Component {
             <li className={`${post.postId} 'post-box'`} key={i}>
               <div className="title-container" id={post.title}>
                 <h4 className="post-name">{post.title}</h4>
-                <Link to={`../../../Demo/${post.postId}/Update`}>
-                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                <Link className='fa-container' to={`../../../Demo/${post.postId}/Update`}>
+                  <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
                 </Link>
               </div>
               <h5>
@@ -84,8 +84,8 @@ class Post extends Component {
               <p className="post-content">{post.content}</p>
               <div className='title-container'>
                 <h4>Comments</h4>
-                <Link to={`../../../Demo/${post.postId}/Comment/`}>
-                  <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                <Link className='fa-container' to={`../../../Demo/${post.postId}/Comment/`}>
+                  <i className="fa fa-plus-square-o" aria-hidden="true"></i>
                 </Link>
               </div>
               <Route

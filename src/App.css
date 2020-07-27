@@ -137,11 +137,14 @@ a {
   display: flex;
   flex-direction: row;
 }
-
+.fa-container {
+   display: flex;
+   flex-direction: row;
+   align-content: center;
+   background: whitesmoke;
+}
 a>.fa {
   margin-left: 12px;
-  background: whitesmoke;
-  align-self: center;
   font-size: 25px;
 }
 .comment-box {
