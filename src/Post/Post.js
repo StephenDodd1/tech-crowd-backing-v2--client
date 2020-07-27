@@ -55,11 +55,12 @@ class Post extends Component {
         {this.props.posts.map((post, i) => {
           return (
             <li className={`${post.postId} 'post-box'`} key={i}>
-              <div id={post.title}>
+              <div className='title-container' id={post.title}>
                 <h4 className="post-name">{post.title}</h4>
                 <Link to={`../../../Demo/${post.postId}/Update`}>
                   <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                 </Link>
+                </div>
                 <h5>
                   Posted by: {post.userId} on {post.date_posted}
                 </h5>
@@ -80,7 +81,7 @@ class Post extends Component {
                   }}
                 />
                 <Route exact path="/Demo/" />
-              </div>
+              
               <p className='post-content'>{post.content}</p>
               <button className="comment-button">
                 <Link to={`../../../Demo/${post.postId}/Comment/`}>

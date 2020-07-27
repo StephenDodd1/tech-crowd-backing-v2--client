@@ -121,15 +121,21 @@ a {
    font-size: 17px;
    background: lightgray;
 }
-.post-box{
+.post-box {
    border: 1.2px solid black;
    border-radius: 4px;
    padding: 4px;
    margin-bottom: 3px;
    margin-left: -40px;
 }
-.post-content{
+.post-content {
    line-height:28px;
+}
+.title-container {
+   display: inline-block;
+}
+i {
+   margin-left: 12px;
 }
 .comment-box {
    border: 1.2px solid lightslategray;
