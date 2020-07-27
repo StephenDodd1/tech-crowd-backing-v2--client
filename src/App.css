@@ -121,6 +121,7 @@ button {
    height: 24px;
    width: 24px;
    padding-bottom: 5px;
+   font-size: 13px;
 }
 a {
   text-decoration: none;
