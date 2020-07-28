@@ -23,4 +23,4 @@ import React, { Component } from 'react';
       )
    }
 }
-export default withRouter(CreatePost);
+export default CreatePost;
