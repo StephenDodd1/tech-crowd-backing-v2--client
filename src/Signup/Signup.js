@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import config from '../config';
+import config from "../config";
 
 export default class Signup extends Component {
   handleSignup = (e) => {
@@ -29,14 +29,14 @@ export default class Signup extends Component {
         credentials: "same-origin",
         headers: {
           "Content-type": "application/json",
-          'Authorization': `Bearer ${config.API_TOKEN}`
+          Authorization: `Bearer ${config.API_TOKEN}`,
         },
         body: JSON.stringify(user),
       }).then((res) => {
         if (!res.ok) {
           throw new Error("Something went wrong");
         }
-        return res.json(200, alert('user created'));
+        return res.json(200, alert("user created"));
       });
     }
   };
@@ -51,11 +51,11 @@ export default class Signup extends Component {
           </div>
           <div className="input-label">
             <label htmlFor="password">Create Password</label>
-            <input name="password" type='password' className="input" />
+            <input name="password" type="password" className="input" />
           </div>
           <div className="input-label">
             <label htmlFor="confirm-password">Confirm Password</label>
-            <input name="confirm-password" className="input" />
+            <input name="confirm-password" type="password" className="input" />
           </div>
           <div className="input-label">
             <label htmlFor="username">Screen Name</label>

@@ -5,6 +5,7 @@ import Comment from "../Comment/Comment";
 import Comments from "../Comments/Comments";
 import UpdatePost from "../UpdatePost/UpdatePost";
 import Context from "../Context";
+import moment from 'moment';
 
 class Post extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class Post extends Component {
     };
   }
   static ContextType = Context;
-  
+
   handleUpdate = (e) => {
     e.preventDefault();
     const title = e.target.title.value;
@@ -97,7 +98,7 @@ class Post extends Component {
               />
               <Comments
                 postId={post.postId}
-                post_date={post.post_date}
+                post_date={moment(post.post_date).fromNow()}
                 username={post.username}
                 updateComments={this.updateComments}
               />
