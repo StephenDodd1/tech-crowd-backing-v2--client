@@ -41,9 +41,9 @@ class Post extends Component {
       .then(this.setState({ posts: this.props.posts }))
       .then(this.props.history("/Demo"));
   };
-  
+
   updateComments = () => {
-    window.location.reload(false);
+    return window.location.reload(false);
   };
   componentDidUpdate() {
     if (this.props.posts !== this.state.posts) {
