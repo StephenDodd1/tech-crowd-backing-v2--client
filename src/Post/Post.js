@@ -5,7 +5,7 @@ import Comment from "../Comment/Comment";
 import Comments from "../Comments/Comments";
 import UpdatePost from "../UpdatePost/UpdatePost";
 import Context from "../Context";
-import moment from 'moment';
+import moment from "moment";
 
 class Post extends Component {
   constructor(props) {
@@ -41,6 +41,7 @@ class Post extends Component {
       .then(this.setState({ posts: this.props.posts }))
       .then(this.props.history("/Demo"));
   };
+  
   updateComments = () => {
     window.location.reload(false);
   };
@@ -61,7 +62,10 @@ class Post extends Component {
             <li className={`${post.postId} 'post-box'`} key={i}>
               <div className="title-container" id={post.title}>
                 <h4 className="post-name">{post.title}</h4>
-                <Link className='fa-container' to={`../../../Demo/${post.postId}/Update`}>
+                <Link
+                  className="fa-container"
+                  to={`../../../Demo/${post.postId}/Update`}
+                >
                   <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
                 </Link>
               </div>
@@ -86,9 +90,12 @@ class Post extends Component {
               />
               <Route exact path="/Demo/" />
               <p className="post-content">{post.content}</p>
-              <div className='title-container'>
+              <div className="title-container">
                 <h4>Comments</h4>
-                <Link className='fa-container' to={`../../../Demo/${post.postId}/Comment/`}>
+                <Link
+                  className="fa-container"
+                  to={`../../../Demo/${post.postId}/Comment/`}
+                >
                   <i className="fa fa-plus-square-o" aria-hidden="true"></i>
                 </Link>
               </div>
