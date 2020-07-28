@@ -19,7 +19,7 @@ class Comment extends Component {
          body: JSON.stringify(addedComment)
       })
       .then(res => res.json())
-      .then(this.props.updateComments())
+      .then(this.props.updateComments
       .then(this.props.history.push('/Demo'))
    }
    render() {
