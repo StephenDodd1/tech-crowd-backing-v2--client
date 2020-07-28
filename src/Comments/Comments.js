@@ -53,7 +53,7 @@ export default class Comments extends Component {
           return (
             <li className="comment-box" key={i}>
               <h5>
-                Posted by: {this.props.username} on {this.props.post_date}
+                Posted by: {this.props.username} on {moment(this.props.post_date).fromNow()}
               </h5>
               <p className="comment-content">{comment.comment}</p>
               <button

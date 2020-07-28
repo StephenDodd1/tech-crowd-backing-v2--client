@@ -66,7 +66,7 @@ class Post extends Component {
                 </Link>
               </div>
               <h5>
-                Posted by: {post.userId} on {post.date_posted}
+                Posted by: {post.userId} on {moment(post.date_posted).fromNow()}
               </h5>
               <Route
                 exact
@@ -98,7 +98,7 @@ class Post extends Component {
               />
               <Comments
                 postId={post.postId}
-                post_date={moment(post.post_date).format('dddd MM-DD-YYYY hh:mm:ss')}
+                post_date={post.post_date}
                 username={post.username}
                 updateComments={this.updateComments}
               />
