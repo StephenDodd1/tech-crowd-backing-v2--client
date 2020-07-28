@@ -51,7 +51,7 @@ export default class Signup extends Component {
           </div>
           <div className="input-label">
             <label htmlFor="password">Create Password</label>
-            <input name="password" className="input" />
+            <input name="password" type='password' className="input" />
           </div>
           <div className="input-label">
             <label htmlFor="confirm-password">Confirm Password</label>

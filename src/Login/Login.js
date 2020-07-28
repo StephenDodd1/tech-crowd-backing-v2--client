@@ -12,7 +12,7 @@ export default class Login extends Component {
                </div>
                <div className='input-label'>
                   <label htmlFor='password'>Create Password</label>
-                  <input id='password' className='input'/>
+                  <input id='password' type='password' className='input'/>
                </div>
                <button type='submit'>Submit</button>
             </form>
