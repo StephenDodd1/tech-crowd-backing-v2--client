@@ -98,7 +98,7 @@ class Post extends Component {
               />
               <Comments
                 postId={post.postId}
-                post_date={moment(post.post_date).fromNow()}
+                post_date={moment.utc(post.post_date).fromNow()}
                 username={post.username}
                 updateComments={this.updateComments}
               />
