@@ -54,10 +54,6 @@ export default class Demo extends Component {
     e.target.reset();
   };
 
-  updatePosts = () => {
-    window.location.reload(false)
-  }
-  
   render() {
     return (
       <div id="forum-container">
