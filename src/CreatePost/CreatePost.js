@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import config from '../config';
 import { withRouter } from 'react-router-dom';
 
  class CreatePost extends Component {

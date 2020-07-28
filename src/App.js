@@ -6,6 +6,8 @@ import Login from "./Login/Login";
 import Demo from "./Demo/Demo";
 import CreatePost from "./CreatePost/CreatePost";
 import { Route, Switch, Redirect } from "react-router-dom";
+import config from '../config';
+import { withRouter } from 'react-router-dom';
 import "./App.css";
 
 class App extends Component {
@@ -38,7 +40,9 @@ class App extends Component {
       body: JSON.stringify(newPost),
     })
       .then((res) => res.json())
-      .then((data) => this.setState({}))
+      .then((data) => this.setState({
+        posts: data
+      }))
       .then(this.props.history.push("/Demo"));
   };
   render() {
@@ -63,4 +67,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
