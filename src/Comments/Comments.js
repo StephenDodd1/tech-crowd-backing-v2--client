@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import config from "../config";
+import moment from 'moment';
 
 export default class Comments extends Component {
   constructor(props) {
