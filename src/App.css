@@ -63,6 +63,9 @@ h2 {
   text-decoration: underline overline;
   margin: 10px;
 }
+.forum-container {
+  border: solid 1.5px white;
+}
 h5 {
   line-height: 0px;
 }
