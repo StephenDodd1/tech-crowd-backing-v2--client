@@ -43,6 +43,7 @@ class Post extends Component {
   };
 
   updateComments = () => {
+    console.log('updateComments ran')
     return window.location.reload(false);
   };
   componentDidUpdate() {
@@ -52,9 +53,6 @@ class Post extends Component {
   }
 
   render() {
-    console.log("props", this.props.posts, "state", this.state.posts);
-
-    console.log("props posts returned", this.props.posts);
     return (
       <ul>
         {this.props.posts.map((post, i) => {
