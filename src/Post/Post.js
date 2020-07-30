@@ -12,6 +12,7 @@ class Post extends Component {
     super(props);
     this.state = {
       posts: this.props.posts,
+      comments: []
     };
   }
   static ContextType = Context;
@@ -47,6 +48,25 @@ class Post extends Component {
       this.setState({ posts: this.props.posts });
     }
   }
+
+  submitComment = (e) => {
+    e.preventDefault();
+    const comment = e.target.comment.value;
+    const addedComment = { comment }
+    fetch(`${config.API_ENDPOINT}/api/${this.props.postId}/comment`, {
+       method: 'POST',
+       mode: 'cors',
+       credentials: 'same-origin',
+       headers: {
+          'Content-type': 'application/json',
+          'Authorization': `Bearer ${config.API_TOKEN}`
+       },
+       body: JSON.stringify(addedComment)
+    })
+    .then(res => res.json())
+    .then(data => this.setState({comments: data}))
+    .then(res => this.props.history.push('/Demo'))
+ }
 
   render() {
     return (
@@ -95,7 +115,7 @@ class Post extends Component {
               </div>
               <Route
                 path={`/Demo/${post.postId}/Comment/`}
-                render={() => <Comment postId={post.postId} />}
+                render={() => <Comment postId={post.postId} submitComment={this.submitComment} />}
               />
               <Comments
                 postId={post.postId}

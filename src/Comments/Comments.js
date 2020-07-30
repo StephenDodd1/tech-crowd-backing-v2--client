@@ -8,8 +8,7 @@ export default class Comments extends Component {
     super(props);
     this.state = {
       comments: [],
-    },
-    this.submitComment = this.submitComment.bind(this);
+    }
   }
 
   handleDelete = (e) => {
