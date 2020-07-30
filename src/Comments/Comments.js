@@ -9,7 +9,7 @@ export default class Comments extends Component {
     this.state = {
       comments: [],
     },
-    this.submitComment = submitComment.bind(this);
+    this.submitComment = this.submitComment.bind(this);
   }
 
   handleDelete = (e) => {
