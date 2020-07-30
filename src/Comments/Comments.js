@@ -5,7 +5,7 @@ import Comment from '../Comment/Comment';
 
 export default class Comments extends Component {
   constructor(props) {
-    super(props);
+    this.super(props);
     this.state = {
       comments: [],
     }
