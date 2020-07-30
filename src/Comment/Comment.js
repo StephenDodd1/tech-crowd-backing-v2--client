@@ -26,6 +26,7 @@ class Comment extends Component {
          return this.props.history.push("/Demo")});
   };
   render() {
+     console.log(this.Context.comments)
     const [comments] = React.useState({ comments: this.Context.comments });
     return (
       <div>
