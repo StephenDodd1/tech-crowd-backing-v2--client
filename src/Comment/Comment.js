@@ -5,13 +5,14 @@ import Context from "../Context";
 
 class Comment extends Component {
   static contextType = Context;
-   constructor(props) {
-      super(props);
-         //const [comments] = React.useState({ comments: this.context.comments });
-   }
+  constructor(props) {
+    super(props);
+  }
+  componentDidUpdate() {
+    const [comments] = React.useState({ comments: this.context.comments });
+  }
   submitComment = (e) => {
-    //
-    console.log(this.context.comments)
+    console.log(this.context.comments);
     e.preventDefault();
     const comment = e.target.comment.value;
     const addedComment = { comment };
