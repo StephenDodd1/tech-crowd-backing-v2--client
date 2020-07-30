@@ -3,9 +3,31 @@ import config from "../config";
 import { Link, withRouter } from "react-router-dom";
 
 class Comment extends Component {
+   constructor(props) {
+      this.super(props);
+      this.state = {
+         comments: []
+      }
+   }
+  submitComment = (e) => {
+    e.preventDefault();
+    const comment = e.target.comment.value;
+    const addedComment = { comment };
+    fetch(`${config.API_ENDPOINT}/api/${this.props.postId}/comment`, {
+      method: "POST",
+      mode: "cors",
+      credentials: "same-origin",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${config.API_TOKEN}`,
+      },
+      body: JSON.stringify(addedComment),
+    })
+      .then((res) => res.json())
+      .then((data) => this.setState({ comments: data }))
+      .then((res) => this.props.history.push("/Demo"));
+  };
   render() {
-   console.log(this.props.submitComment)
-   console.log(this.props.postId)
     return (
       <div>
         <form onSubmit={this.props.submitComment}>
