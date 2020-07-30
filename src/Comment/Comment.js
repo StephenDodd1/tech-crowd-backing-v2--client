@@ -21,7 +21,9 @@ class Comment extends Component {
     })
       .then((res) => res.json())
       .then((data) => this.setState({ comments: data }))
-      .then((res) => this.props.history.push("/Demo"));
+      .then((res) => {
+         alert('Refresh the page to view your comment')
+         return this.props.history.push("/Demo")});
   };
   render() {
     const [comments] = React.useState({ comments: this.Context.comments });
