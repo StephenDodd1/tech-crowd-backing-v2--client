@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import config from "../config";
-import moment from 'moment';
+import moment from "moment";
+import Comment from 'Comment.js';
 
 export default class Comments extends Component {
   constructor(props) {
     super(props);
     this.state = {
       comments: [],
-    };
-    submitComment=submitComment.bind(this)
+    },
+    submitComment = submitComment.bind(this);
   }
 
   handleDelete = (e) => {
@@ -55,7 +56,8 @@ export default class Comments extends Component {
           return (
             <li className="comment-box" key={i}>
               <h5>
-                Posted by: {this.props.username} on {moment(this.props.post_date).fromNow()}
+                Posted by: {this.props.username} on{" "}
+                {moment(this.props.post_date).fromNow()}
               </h5>
               <p className="comment-content">{comment.comment}</p>
               <button
