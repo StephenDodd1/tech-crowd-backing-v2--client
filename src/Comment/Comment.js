@@ -6,8 +6,9 @@ import Context from "../Context";
 class Comment extends Component {
   static contextType = Context;
   submitComment = (e) => {
+    //const [comments] = React.useState({ comments: this.context.comments });
+    console.log(this.context.comments)
     e.preventDefault();
-    const [comments] = React.useState({ comments: this.context.comments });
     const comment = e.target.comment.value;
     const addedComment = { comment };
     fetch(`${config.API_ENDPOINT}/api/${this.props.postId}/comment`, {
