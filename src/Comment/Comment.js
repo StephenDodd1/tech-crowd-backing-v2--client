@@ -30,7 +30,7 @@ class Comment extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.props.submitComment}>
+        <form onSubmit={this.submitComment}>
           <textarea
             placeholder="Enter your comment here. Remember to be respectful."
             name="comment"
