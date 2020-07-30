@@ -4,6 +4,8 @@ import { Link, withRouter } from "react-router-dom";
 
 class Comment extends Component {
   render() {
+   console.log(this.props.submitComment)
+   console.log(this.props.postId)
     return (
       <div>
         <form onSubmit={this.props.submitComment}>
