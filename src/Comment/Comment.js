@@ -4,9 +4,13 @@ import { Link, withRouter } from "react-router-dom";
 import Context from "../Context";
 
 class Comment extends Component {
+   constructor(props) {
+      super(props);
+         const [comments] = React.useState({ comments: this.context.comments });
+   }
   static contextType = Context;
   submitComment = (e) => {
-    //const [comments] = React.useState({ comments: this.context.comments });
+    //
     console.log(this.context.comments)
     e.preventDefault();
     const comment = e.target.comment.value;
