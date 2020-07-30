@@ -4,11 +4,10 @@ import { Link, withRouter } from "react-router-dom";
 import Context from "../Context";
 
 class Comment extends Component {
-
   static contextType = Context;
    constructor(props) {
       super(props);
-         const [comments] = React.useState({ comments: this.context.comments });
+         //const [comments] = React.useState({ comments: this.context.comments });
    }
   submitComment = (e) => {
     //
