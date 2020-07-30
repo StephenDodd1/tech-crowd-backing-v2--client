@@ -6,6 +6,7 @@ import Context from "../Context";
 class Comment extends Component {
   static contextType = Context;
   submitComment = (e) => {
+    const [comments] = React.useState({ comments: this.context.comments });
     e.preventDefault();
     const comment = e.target.comment.value;
     const addedComment = { comment };
@@ -21,7 +22,6 @@ class Comment extends Component {
     })
       .then((res) => res.json())
       .then((data) => {
-        const [comments] = React.useState({ comments: this.context.comments });
         return this.setState({ comments: data });
       })
       .then((res) => {
