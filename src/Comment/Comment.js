@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import config from "../config";
 import { Link, withRouter } from "react-router-dom";
+import Context from '../Context'
 
 class Comment extends Component {
    constructor(props) {
@@ -8,6 +9,7 @@ class Comment extends Component {
       this.state = {
          comments: []
       }
+      static contextType = Context
    }
   submitComment = (e) => {
     e.preventDefault();
