@@ -4,7 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 
 class Comment extends Component {
    constructor(props) {
-      this.super(props);
+      super(props);
       this.state = {
          comments: []
       }

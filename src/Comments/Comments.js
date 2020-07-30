@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import config from "../config";
 import moment from "moment";
-import Comment from '../Comment/Comment';
 
 export default class Comments extends Component {
   constructor(props) {
-    this.super(props);
+    super(props);
     this.state = {
       comments: [],
     }
