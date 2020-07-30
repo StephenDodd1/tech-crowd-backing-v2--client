@@ -8,6 +8,7 @@ export default class Comments extends Component {
     this.state = {
       comments: [],
     };
+    submitComment=submitComment.bind(this)
   }
 
   handleDelete = (e) => {
