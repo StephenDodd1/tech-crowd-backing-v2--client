@@ -1,15 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import config from "../config";
 import { Link, withRouter } from "react-router-dom";
 import Context from '../Context'
 
 class Comment extends Component {
-   constructor(props) {
-      super(props);
-      this.state = {
-         comments: []
-      }
-   }
    static contextType = Context
   submitComment = (e) => {
     e.preventDefault();
@@ -30,6 +24,7 @@ class Comment extends Component {
       .then((res) => this.props.history.push("/Demo"));
   };
   render() {
+   const [comments] = React.useState({comments: this.Context.comments})
     return (
       <div>
         <form onSubmit={this.submitComment}>
