@@ -25,9 +25,9 @@ class Comment extends Component {
         return this.setState({ comments: data });
       })
       .then((res) => {
-         console.log(this.state.comments)
-        alert("Refresh the page to view your comment");
-        //return this.props.history.push("/Demo");
+        console.log(this.state.comments);
+        this.props.history.push("/Demo");
+        return alert("Refresh the page to view your comment");
       });
   };
   render() {
