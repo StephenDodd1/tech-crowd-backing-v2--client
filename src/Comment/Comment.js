@@ -20,14 +20,17 @@ class Comment extends Component {
       body: JSON.stringify(addedComment),
     })
       .then((res) => res.json())
-      .then((data) => this.setState({ comments: data }))
+      .then((data) => {
+        const [comments] = React.useState({ comments: this.context.comments });
+        return this.setState({ comments: data });
+      })
       .then((res) => {
-         alert('Refresh the page to view your comment')
-         return this.props.history.push("/Demo")});
+        alert("Refresh the page to view your comment");
+        return this.props.history.push("/Demo");
+      });
   };
   render() {
-     console.log(this.context.comments)
-    const [comments] = React.useState({ comments: this.context.comments });
+    console.log(this.context.comments);
     return (
       <div>
         <form onSubmit={this.submitComment}>
