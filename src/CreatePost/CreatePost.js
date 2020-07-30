@@ -1,7 +1,33 @@
 import React, { Component } from 'react';
+import config from '../config';
+import { withRouter } from 'react-router-dom';
 
  class CreatePost extends Component {
-
+   createPost = (e) => {
+      e.preventDefault();
+      const type = e.target.type.value;
+      const title = e.target.title.value;
+      const content = e.target.content.value;
+      const userid = 1
+      const newPost = {
+         userid,
+         type,
+         title,
+         content
+      }
+      fetch(`${config.API_ENDPOINT}/api/posts`, {
+         method: 'POST',
+         mode: 'cors',
+         credentials: 'same-origin',
+         headers: {
+            'Content-type': 'application/json',
+            'Authorization': `Bearer ${config.API_TOKEN}`
+         },
+         body: JSON.stringify(newPost)
+      })
+      .then(res => res.json())
+      .then(this.props.history.push('/Demo'))
+   }
 
    render() {
       return(
@@ -23,4 +49,4 @@ import React, { Component } from 'react';
       )
    }
 }
-export default CreatePost;
+export default withRouter(CreatePost);
