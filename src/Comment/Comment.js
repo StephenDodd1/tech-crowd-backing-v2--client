@@ -9,8 +9,8 @@ class Comment extends Component {
       this.state = {
          comments: []
       }
-      static contextType = Context
    }
+   static contextType = Context
   submitComment = (e) => {
     e.preventDefault();
     const comment = e.target.comment.value;
