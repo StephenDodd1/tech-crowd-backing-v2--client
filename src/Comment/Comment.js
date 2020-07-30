@@ -1,10 +1,10 @@
 import React, { Component, useState } from "react";
 import config from "../config";
 import { Link, withRouter } from "react-router-dom";
-import Context from '../Context'
+import Context from "../Context";
 
 class Comment extends Component {
-   static contextType = Context
+  static contextType = Context;
   submitComment = (e) => {
     e.preventDefault();
     const comment = e.target.comment.value;
@@ -24,7 +24,7 @@ class Comment extends Component {
       .then((res) => this.props.history.push("/Demo"));
   };
   render() {
-   const [comments] = React.useState({comments: this.Context.comments})
+    const [comments] = React.useState({ comments: this.Context.comments });
     return (
       <div>
         <form onSubmit={this.submitComment}>
