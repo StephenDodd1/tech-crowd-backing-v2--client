@@ -38,8 +38,10 @@ class Post extends Component {
         }
         return res.json();
       })
-      .then(this.props.history("/Demo"))
-      .then(alert('Refresh the page to see your updated post.'))
+      .then(res=> {
+        this.props.history.push("/Demo");
+        return alert("Refresh the page to view your post");
+      })
   };
 
   updateComments = () => {

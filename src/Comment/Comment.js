@@ -27,7 +27,6 @@ class Comment extends Component {
       body: JSON.stringify(addedComment),
     })
       .then((res) => res.json())
-      .then((data) => this.setState({ comments: data }))
       .then(res=> {
         this.props.history.push("/Demo");
         return alert("Refresh the page to view your comment");
