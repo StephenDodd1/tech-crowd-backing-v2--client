@@ -43,6 +43,7 @@ export default class Demo extends Component {
     })
       .then((posts) => {
         if (posts.length === 0) {
+          console.log(posts.length)
           return alert("No results matched your search.");
         } else {
           return posts.json();
