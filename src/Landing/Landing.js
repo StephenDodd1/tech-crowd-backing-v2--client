@@ -13,7 +13,7 @@ export default function Landing() {
             <p>We hope you're excited for what's to come, because with tech 
                comes myriad possibilities. The aim of TechCrowdBacking is to
                provide you with information on investments and technologies 
-               that will change the world. As Ghandi would have said "You 
+               that will change the world. As Gandhi would have said "You 
                must be the change you wish to see in the world". So back the 
                tech you believe in.</p>
          </div>
