@@ -26,7 +26,9 @@ import { withRouter } from 'react-router-dom';
          body: JSON.stringify(newPost)
       })
       .then(res => res.json())
-      .then(this.props.history.push('/Demo'))
+      .then(res => {
+         alert('Refresh the page to see your post.')
+         return this.props.history.push('/Demo')})
    }
 
    render() {

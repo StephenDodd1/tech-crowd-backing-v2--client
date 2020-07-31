@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import config from '../config';
 import { Link } from "react-router-dom";
 import Post from "../Post/Post";
-import postsContext from "../Context";
+import Context from "../Context";
 
 export default class Demo extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ export default class Demo extends Component {
     };
   }
 
-  static contextType = postsContext;
+  static contextType = Context;
 
   componentDidMount() {
     fetch(`${config.API_ENDPOINT}/api/posts`, {
@@ -43,7 +43,7 @@ export default class Demo extends Component {
     })
       .then((posts) => {
         if (!posts) {
-          return posts.json("No results matched your search.");
+          return alert("No results matched your search.");
         } else {
           return posts.json();
         }

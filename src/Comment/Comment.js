@@ -8,9 +8,9 @@ class Comment extends Component {
   constructor(props) {
     super(props);
   }
-  componentDidUpdate() {
+ /* componentDidUpdate() {
     const [comments] = React.useState({ comments: this.context.comments });
-  }
+  }*/
   submitComment = (e) => {
     console.log(this.context.comments);
     e.preventDefault();
@@ -27,12 +27,11 @@ class Comment extends Component {
       body: JSON.stringify(addedComment),
     })
       .then((res) => res.json())
-      .then((data) => {
-        this.setState({ comments: data });
-        console.log(this.state.comments);
+      .then((data) => this.setState({ comments: data }))
+      .then(res=> {
         this.props.history.push("/Demo");
         return alert("Refresh the page to view your comment");
-      });
+      })
   };
   render() {
     console.log(this.context.comments);

@@ -38,7 +38,7 @@ class Post extends Component {
         }
         return res.json();
       })
-      .then(res => this.setState({ posts: this.state.posts }))
+      .then(res => alert('Refresh the page to see your updated post.'))
       .then(res =>this.props.history("/Demo"));
   };
 
