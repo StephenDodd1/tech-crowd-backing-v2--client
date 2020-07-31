@@ -39,6 +39,7 @@ class Post extends Component {
         return res.json();
       })
       .then(res => this.setState({ posts: this.state.posts }))
+      .then(res =>this.props.history("/Demo"));
   };
 
   updateComments = () => {
