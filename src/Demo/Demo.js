@@ -46,10 +46,12 @@ export default class Demo extends Component {
           console.log(posts.length)
           return alert("No results matched your search.");
         } else {
+          console.log(posts.length)
           return posts.json();
         }
       })
       .then((data) => {
+        console.log(posts.length)
         return this.setState({ posts: data });
       });
     e.target.reset();
