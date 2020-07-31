@@ -51,7 +51,7 @@ export default class Demo extends Component {
         }
       })
       .then((data) => {
-        console.log(posts.length)
+        console.log(data.length)
         return this.setState({ posts: data });
       });
     e.target.reset();
