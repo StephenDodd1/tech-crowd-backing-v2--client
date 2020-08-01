@@ -42,7 +42,7 @@ export default class Demo extends Component {
       },
     })
       .then((posts) => {
-        if (!posts[0]) {
+        if (!posts) {
           return alert("No results matched your search.");
         } else {
           return posts.json();
