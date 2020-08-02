@@ -18,12 +18,14 @@ export default class Login extends Component {
       );
       username.value = '';
       password.value = '';
+      console.log('login ran')
       this.props.onLoginSuccess();
    }
    onloginSuccess = () => {
       const { location, history } = this.props;
       const destination = (location.state || {}).from || '/'
-      history.push(destination)
+      console.log('login success')
+      this.history.push(destination)
    }
    render() {
       return(
