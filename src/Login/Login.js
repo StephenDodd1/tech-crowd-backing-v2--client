@@ -31,8 +31,8 @@ export default class Login extends Component {
             <h3>LOGIN -- TechCrowdBacking</h3>
             <form onSubmit={this.handleSubmitBasicAuth}>
                <div className='input-label'>
-                  <label htmlFor='email-address'>Email</label>
-                  <input id='email-address' className='input'/>
+                  <label htmlFor='username'>Username</label>
+                  <input id='username' className='input'/>
                </div>
                <div className='input-label'>
                   <label htmlFor='password'>Create Password</label>
