@@ -24,7 +24,7 @@ export default class Login extends Component {
    onLoginSuccess = () => {
       const { location, history } = this.props;
       const destination = (location.state || {}).from || '/Demo'
-      console.log(this.props.TOKEN_KEY)
+      console.log('login success')
       this.history.push(destination)
    }
    render() {

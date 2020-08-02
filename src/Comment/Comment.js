@@ -22,7 +22,7 @@ class Comment extends Component {
       credentials: "same-origin",
       headers: {
         "Content-type": "application/json",
-        Authorization: `Bearer ${config.API_TOKEN}`,
+        Authorization: `basic ${config.TOKEN_KEY}`,
       },
       body: JSON.stringify(addedComment),
     })
