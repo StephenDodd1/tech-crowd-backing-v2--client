@@ -34,11 +34,11 @@ export default class Login extends Component {
             <form onSubmit={this.handleSubmitBasicAuth}>
                <div className='input-label'>
                   <label htmlFor='username'>Username</label>
-                  <input id='username' className='input'/>
+                  <input id='username' name='username' className='input'/>
                </div>
                <div className='input-label'>
-                  <label htmlFor='password'>Password</label>
-                  <input id='password' type='password' className='input'/>
+                  <label htmlFor='current-password'>Password</label>
+                  <input id='current-password' name='password' type='password' className='input'/>
                </div>
                <button type='submit'>Submit</button>
             </form>
