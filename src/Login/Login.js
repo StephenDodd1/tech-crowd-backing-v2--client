@@ -37,8 +37,8 @@ export default class Login extends Component {
                   <input id='username' className='input'/>
                </div>
                <div className='input-label'>
-                  <label htmlFor='current-password'>Create Password</label>
-                  <input id='current-password' type='password' className='input'/>
+                  <label htmlFor='password'>Password</label>
+                  <input id='password' type='password' className='input'/>
                </div>
                <button type='submit'>Submit</button>
             </form>
