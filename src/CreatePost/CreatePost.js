@@ -44,7 +44,7 @@ class CreatePost extends Component {
           </select>
           <br />
           <br />
-          <label htmlFor="title-input">Title&emsp;</label>
+          <label htmlFor="title-input">Post Title&emsp;</label>
           <input name="title" id="title-input" />
           <br />
           <br />

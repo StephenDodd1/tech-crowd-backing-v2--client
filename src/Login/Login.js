@@ -1,11 +1,35 @@
 import React, { Component } from 'react';
+import LoginService from './login-service';
 
 export default class Login extends Component {
+   static defaultProps = {
+      location: {},
+      history: {
+         push: () => {},
+      },
+      onLoginSuccess: () => {},
+   }
+   state = { error: null };
+   handleSubmitBasicAuth = (e) => {
+      e.preventDefault();
+      const { username, password } = e.target;
+      LoginService.saveAuthToken(
+         LoginService.makeBasicAuthToken(username.value, password.value)
+      );
+      username.value = '';
+      password.value = '';
+      this.props.onLoginSuccess();
+   }
+   onloginSuccess = () => {
+      const { location, history } = this.props;
+      const destination = (location.state || {}).from || '/'
+      history.push(destination)
+   }
    render() {
       return(
          <div id='login-container'>
             <h3>LOGIN -- TechCrowdBacking</h3>
-            <form>
+            <form onSubmit={this.handleSubmitBasicAuth}>
                <div className='input-label'>
                   <label htmlFor='email-address'>Email</label>
                   <input id='email-address' className='input'/>
