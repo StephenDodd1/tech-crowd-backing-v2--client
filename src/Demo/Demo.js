@@ -21,7 +21,7 @@ export default class Demo extends Component {
       credentials: "same-origin",
       headers: {
         "Content-type": "application/json",
-        'Authorization': `Bearer ${config.API_KEY}`
+        'Authorization': `Bearer ${config.API_TOKEN}`
       },
     })
       .then((res) => res.json())
