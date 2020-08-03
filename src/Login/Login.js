@@ -17,6 +17,8 @@ export default class Login extends Component {
       LoginService.saveAuthToken(
          LoginService.makeBasicAuthToken(username.value, password.value)
       );
+      console.log(username)
+      console.log(password.value)
       console.log(config.TOKEN_KEY)
       fetch(`${config.API_ENDPOINT}/api/user`, {
          method: "POST",
@@ -34,7 +36,6 @@ export default class Login extends Component {
    onLoginSuccess = () => {
       const { location, history } = this.props;
       const destination = (location.state || {}).from || '/Demo'
-      console.log(this.history)
       history.push(destination)
    }
    render() {
