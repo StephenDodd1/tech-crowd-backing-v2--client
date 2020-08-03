@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import config from '../config'
 import LoginService from './login-service';
 
 export default class Login extends Component {
@@ -16,16 +17,25 @@ export default class Login extends Component {
       LoginService.saveAuthToken(
          LoginService.makeBasicAuthToken(username.value, password.value)
       );
+      console.log(config.TOKEN_KEY)
+      fetch(`${config.API_ENDPOINT}/api/user`, {
+         method: "POST",
+         mode: "cors",
+         credentials: "same-origin",
+         headers: {
+           "Content-type": "application/json",
+           Authorization: `basic ${config.TOKEN_KEY}`,
+         }
+      })
       username.value = '';
       password.value = '';
-      console.log('login ran')
       this.onLoginSuccess();
    }
    onLoginSuccess = () => {
       const { location, history } = this.props;
       const destination = (location.state || {}).from || '/Demo'
-      console.log('login success')
-      this.history.push(destination)
+      console.log(this.history)
+      history.push(destination)
    }
    render() {
       return(

@@ -1,8 +1,8 @@
 import config from "../config";
 
 const LoginService = {
-  makeBasicAuthToken(userName, password) {
-    return window.btoa(`${userName}:${password}`);
+  makeBasicAuthToken(username, password) {
+    return window.btoa(`${username}:${password}`);
   },
   saveAuthToken(token) {
     window.localStorage.setItem(config.TOKEN_KEY, token)
