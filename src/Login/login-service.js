@@ -2,6 +2,7 @@ import config from "../config";
 
 const LoginService = {
   makeBasicAuthToken(username, password) {
+    console.log(username, ':', password)
     return window.btoa(`${username}:${password}`);
   },
   saveAuthToken(token) {
