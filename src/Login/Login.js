@@ -14,7 +14,7 @@ export default class Login extends Component {
    handleSubmitBasicAuth = (e) => {
       e.preventDefault();
       const { username, password } = e.target;
-      const TOKEN_KEY = LoginService.saveAuthToken(
+      LoginService.saveAuthToken(
          LoginService.makeBasicAuthToken(username.value, password.value)
       );
       console.log(LoginService.getAuthToken())
