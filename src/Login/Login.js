@@ -24,7 +24,7 @@ export default class Login extends Component {
          credentials: "same-origin",
          headers: {
            "Content-type": "application/json",
-           Authorization: `Bearer ${config.API_TOKEN}, basic ${LoginService.getAuthToken()}`,
+           Authorization: `basic ${LoginService.getAuthToken()}, Bearer ${config.API_TOKEN}`,
          }
       })
       username.value = '';
