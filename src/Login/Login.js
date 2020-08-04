@@ -17,7 +17,7 @@ export default class Login extends Component {
       const TOKEN_KEY = LoginService.saveAuthToken(
          LoginService.makeBasicAuthToken(username.value, password.value)
       );
-      console.log(window.localStorage.getItem(TOKEN_KEY))
+      console.log(window.localStorage.getItem(config.TOKEN_KEY))
       fetch(`${config.API_ENDPOINT}/api/user`, {
          method: "POST",
          mode: "cors",
