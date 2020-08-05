@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import config from "../config";
 import LoginService from "./login-service";
+import UserContextConsumer from '../Context'
 
 export default class Login extends Component {
   static defaultProps = {
@@ -14,13 +15,12 @@ export default class Login extends Component {
     super(props);
     this.state = {
       error: null,
-      screenName: "defaultUser",
+      userId: 1,
     };
   }
   handleSubmitBasicAuth = (e) => {
     e.preventDefault();
     const { username, password } = e.target;
-    this.setState({ screenName: username.value });
     LoginService.saveAuthToken(
       LoginService.makeBasicAuthToken(username.value, password.value)
     );
@@ -45,16 +45,22 @@ export default class Login extends Component {
     password.value = "";
   };
   onLoginSuccess = () => {
-    console.log(this.state.screenName);
+    console.log(this.state.userId);
     const { location, history } = this.props;
     const destination = (location.state || {}).from || "/Demo";
     history.push(destination);
   };
   render() {
     return (
+      <UserContextConsumer>
+         {context => (
       <div id="login-container">
         <h3>LOGIN -- TechCrowdBacking</h3>
-        <form onSubmit={this.handleSubmitBasicAuth}>
+        <form onSubmit={()=> {
+         this.handleSubmitBasicAuth;
+         context.toggleUserAuth;
+         context.updateUserId;
+         }}>
           <div className="input-label">
             <label htmlFor="username">Username</label>
             <input id="username" name="username" className="input" />
@@ -71,6 +77,8 @@ export default class Login extends Component {
           <button type="submit">Submit</button>
         </form>
       </div>
+      )}
+      </UserContextConsumer>
     );
   }
 }

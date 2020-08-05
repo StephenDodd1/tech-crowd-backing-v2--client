@@ -1,10 +1,36 @@
-import React from 'react';
+import React, { Component } from "react";
 
+class UserContext extends Component {
+  state = {
+    userAuth: false,
+    userId: 0,
+  };
+  toggleUserAuth = () => {
+    this.setState((prevState) => {
+      return {
+        userAuth: prevState.userAuth === false ? true : false,
+      };
+    });
+  };
+  updateUserId = () => {
+    this.setState((prevState) => {
+      return {
+        userId: user.userId,
+      };
+    });
+  };
+  render() {
+    return (
+      <Provider
+        value={{
+          userAuth: this.state.userAuth,
+          toggleUserAuth: this.toggleUserAuth,
+          userId: this.state.userId,
+          updateUserId: this.updateUserId,
+        }}
+      ></Provider>
+    );
+  }
+}
 
-const Context = React.createContext({
-   posts: [],
-   comments: [],
-   userAuth: false
-})
-
-export default Context;
+export { UserContext, Consumer as UserContextConsumer };

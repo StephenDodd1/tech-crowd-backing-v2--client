@@ -1,14 +1,18 @@
 import React, { Component } from "react";
 import config from "../config";
 import { withRouter } from "react-router-dom";
+import Context from '../Context'
 
 class CreatePost extends Component {
+  static contextType = Context
+
+
   createPost = (e) => {
     e.preventDefault();
     const type = e.target.type.value;
     const title = e.target.title.value;
     const content = e.target.content.value;
-    const userid = 1;
+    const userid = e.target.userid.value;
     const newPost = {
       userid,
       type,
@@ -33,11 +37,13 @@ class CreatePost extends Component {
   };
 
   render() {
+  const userId = this.context
     return (
       <div>
         <h3>What is your post about?</h3>
         <form onSubmit={this.props.createPost}>
           &emsp;&emsp;&emsp;
+          <input type="hidden" name="post_id" value={userId} />
           <select name="type" defaultValue="select below">
             <option value="Technology">Technology</option>
             <option value="Investment">Investment</option>
