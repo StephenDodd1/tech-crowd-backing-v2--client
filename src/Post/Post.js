@@ -14,7 +14,7 @@ class Post extends Component {
       posts: this.props.posts,
     };
   }
-  static ContextType = UserContextConsumer;
+  //static ContextType = UserContextConsumer;
 
   handleUpdate = (e) => {
     e.preventDefault();

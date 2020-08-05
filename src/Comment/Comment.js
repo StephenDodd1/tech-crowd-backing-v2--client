@@ -4,7 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 import UserContextConsumer from "../Context";
 
 class Comment extends Component {
-  static contextType = UserContextConsumer;
+  //static contextType = UserContextConsumer;
   constructor(props) {
     super(props);
   }
@@ -12,7 +12,7 @@ class Comment extends Component {
     const [comments] = React.useState({ comments: this.context.comments });
   }*/
   submitComment = (e) => {
-    console.log(this.context.comments);
+    //console.log(this.context.comments);
     e.preventDefault();
     const comment = e.target.comment.value;
     const addedComment = { comment };
