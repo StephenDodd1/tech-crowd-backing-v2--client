@@ -4,7 +4,7 @@ import { Link, Route, withRouter } from "react-router-dom";
 import Comment from "../Comment/Comment";
 import Comments from "../Comments/Comments";
 import UpdatePost from "../UpdatePost/UpdatePost";
-import Context from "../Context";
+import UserContextConsumer from "../Context";
 import moment from "moment";
 
 class Post extends Component {
