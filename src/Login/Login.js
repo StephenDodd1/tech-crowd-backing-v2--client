@@ -28,7 +28,7 @@ export default class Login extends Component {
          }
       }).then((res) => {
          const user = res.json()
-         return console.log(user)})
+         return console.log(user.jwtToken)})
       username.value = '';
       password.value = '';
       this.onLoginSuccess();
