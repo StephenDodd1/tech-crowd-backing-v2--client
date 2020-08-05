@@ -33,5 +33,5 @@ class UserContext extends Component {
   }
 }
 
-export default { UserContext }
+export { UserContext }
 export { Consumer as UserContextConsumer };
