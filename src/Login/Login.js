@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import config from "../config";
 import LoginService from "./login-service";
-import UserContextConsumer from '../Context'
+import { UserContextConsumer }from '../Context'
 
 export default class Login extends Component {
   static defaultProps = {
