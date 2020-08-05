@@ -28,7 +28,8 @@ export default class Login extends Component {
          }
       }).then((res) => {
          if (!res.ok) {
-            return res.json({error: {message: 'Something went wrong'}})
+            console.log('failed login')
+            return res.status(401).json({error: {message: 'Something went wrong'}})
          }
          return res.json()}).then(data => {
          window.localStorage.setItem(config.JWT_TOKEN, data.jwtToken)
