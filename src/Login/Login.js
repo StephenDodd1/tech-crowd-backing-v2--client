@@ -5,7 +5,7 @@ import LoginService from './login-service';
 export default class Login extends Component {
    static defaultProps = {
       location: {},
-      screenName: '',
+      screenName: 'defaultUser',
       history: {
          push: () => {},
       },
