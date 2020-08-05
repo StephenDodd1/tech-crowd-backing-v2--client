@@ -38,7 +38,7 @@ export default class Login extends Component {
       password.value = '';
    }
    onLoginSuccess = () => {
-      if(screenName !== ''){
+      if(this.state.screenName !== ''){
       const { location, history } = this.props;
       const destination = (location.state || {}).from || '/Demo'
       history.push(destination)}
