@@ -26,7 +26,11 @@ export default class Login extends Component {
            "Content-type": "application/json",
            Authorization: `basic ${LoginService.getAuthToken()}, Bearer ${config.API_TOKEN}`,
          }
-      }).then((res) => res.json()).then(data => {
+      }).then((res) => {
+         if (!res.ok) {
+            return res.json({error: {message: 'Something went wrong'}})
+         }
+         return res.json()}).then(data => {
          window.localStorage.setItem(config.JWT_TOKEN, data.jwtToken)
          return console.log(data.jwtToken)})
       username.value = '';
