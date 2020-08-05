@@ -5,6 +5,7 @@ import LoginService from './login-service';
 export default class Login extends Component {
    static defaultProps = {
       location: {},
+      screenName: '',
       history: {
          push: () => {},
       },
@@ -26,18 +27,21 @@ export default class Login extends Component {
            "Content-type": "application/json",
            Authorization: `basic ${LoginService.getAuthToken()}, Bearer ${config.API_TOKEN}`,
          }
-      }).then((res) => {
-         return res.json()}).then(data => {
-            if(data.ok){
+      })
+      .then((res) => res.json())
+      .then(data => {
          window.localStorage.setItem(config.JWT_TOKEN, data.jwtToken)
-         return this.onLoginSuccess();}})
+         this.setState({screenName: username})
+         return this.onLoginSuccess();
+      })
       username.value = '';
       password.value = '';
    }
    onLoginSuccess = () => {
+      if(screenName !== ''){
       const { location, history } = this.props;
       const destination = (location.state || {}).from || '/Demo'
-      history.push(destination)
+      history.push(destination)}
    }
    render() {
       return(
