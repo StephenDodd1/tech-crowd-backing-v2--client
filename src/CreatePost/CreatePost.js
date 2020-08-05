@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import UserContextConsumer from '../Context'
 
 class CreatePost extends Component {
-  static contextType = Context
+  static contextType = UserContextConsumer
 
 
   createPost = (e) => {
