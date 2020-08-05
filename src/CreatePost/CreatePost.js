@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import config from "../config";
 import { withRouter } from "react-router-dom";
-import Context from '../Context'
+import UserContextConsumer from '../Context'
 
 class CreatePost extends Component {
   static contextType = Context
