@@ -33,7 +33,7 @@ class Comment extends Component {
       })
   };
   render() {
-    console.log(this.context.comments);
+    //console.log(this.context.comments);
     return (
       <div>
         <form onSubmit={this.submitComment}>
