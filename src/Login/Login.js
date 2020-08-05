@@ -26,7 +26,9 @@ export default class Login extends Component {
            "Content-type": "application/json",
            Authorization: `basic ${LoginService.getAuthToken()}, Bearer ${config.API_TOKEN}`,
          }
-      }).then((res) => res.json())
+      }).then((res) => {
+         res.json()
+         return console.log(res)})
       username.value = '';
       password.value = '';
       this.onLoginSuccess();
