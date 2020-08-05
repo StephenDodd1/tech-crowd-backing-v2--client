@@ -39,10 +39,10 @@ export default class Login extends Component {
    }
    onLoginSuccess = () => {
 
-      console.log(this.state.screenName){
+      console.log(this.state.screenName)
       const { location, history } = this.props;
       const destination = (location.state || {}).from || '/Demo'
-      history.push(destination)}
+      history.push(destination)
    }
    render() {
       return(
