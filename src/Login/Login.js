@@ -27,7 +27,7 @@ export default class Login extends Component {
            Authorization: `basic ${LoginService.getAuthToken()}, Bearer ${config.API_TOKEN}`,
          }
       }).then((res) => res.json()).then(data => {
-         data.jwtToken
+         
          return console.log(data.jwtToken)})
       username.value = '';
       password.value = '';
