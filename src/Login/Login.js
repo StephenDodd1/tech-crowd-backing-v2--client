@@ -20,6 +20,7 @@ export default class Login extends Component {
   handleSubmitBasicAuth = (e) => {
     e.preventDefault();
     const { username, password } = e.target;
+    this.setState({ screenName: username.value });
     LoginService.saveAuthToken(
       LoginService.makeBasicAuthToken(username.value, password.value)
     );
@@ -38,7 +39,6 @@ export default class Login extends Component {
       .then((res) => res.json())
       .then((data) => {
         window.localStorage.setItem(config.JWT_TOKEN, data.jwtToken);
-        this.setState( this.state.screenName = username.value );
         return this.onLoginSuccess();
       });
     username.value = "";
