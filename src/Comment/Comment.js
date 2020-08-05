@@ -4,7 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 import UserContextConsumer from "../Context";
 
 class Comment extends Component {
-  static contextType = Context;
+  static contextType = UserContextConsumer;
   constructor(props) {
     super(props);
   }
