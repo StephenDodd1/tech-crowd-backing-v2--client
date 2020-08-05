@@ -27,16 +27,11 @@ export default class Login extends Component {
            Authorization: `basic ${LoginService.getAuthToken()}, Bearer ${config.API_TOKEN}`,
          }
       }).then((res) => {
-         if (!res.ok) {
-            console.log('failed login')
-            return res.status(401).json({error: {message: 'Something went wrong'}})
-         }
          return res.json()}).then(data => {
          window.localStorage.setItem(config.JWT_TOKEN, data.jwtToken)
-         return console.log(data.jwtToken)})
+         return this.onLoginSuccess();})
       username.value = '';
       password.value = '';
-      this.onLoginSuccess();
    }
    onLoginSuccess = () => {
       const { location, history } = this.props;
