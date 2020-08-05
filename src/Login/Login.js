@@ -15,7 +15,7 @@ export default class Login extends Component {
     super(props);
     this.state = {
       error: null,
-      userId: 0,
+      userId: 1,
     };
   }
   handleSubmitBasicAuth = (e) => {
@@ -38,7 +38,6 @@ export default class Login extends Component {
     })
       .then((res) => res.json())
       .then((data) => {
-         console.log(data)
         window.localStorage.setItem(config.JWT_TOKEN, data.jwtToken);
         this.setState({userId: data.userid})
         return this.onLoginSuccess();
