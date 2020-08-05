@@ -15,7 +15,7 @@ class UserContext extends Component {
   updateUserId = () => {
     this.setState((prevState) => {
       return {
-        userId: userId,
+        userId: this.state.userId,
       };
     });
   };
