@@ -5,13 +5,15 @@ import LoginService from './login-service';
 export default class Login extends Component {
    static defaultProps = {
       location: {},
-      screenName: 'defaultUser',
       history: {
          push: () => {},
       },
       onLoginSuccess: () => {},
    }
-   state = { error: null };
+   state = { 
+      error: null,
+      screenName: 'defaultUser',
+    };
    handleSubmitBasicAuth = (e) => {
       e.preventDefault();
       const { username, password } = e.target;
