@@ -15,7 +15,7 @@ export default class Login extends Component {
     super(props);
     this.state = {
       error: null,
-      userId: 0,
+      userId: 1,
     };
   }
   handleSubmitBasicAuth = (e) => {
@@ -52,15 +52,15 @@ export default class Login extends Component {
   };
   render() {
     return (
-      //<UserContextConsumer>
-         //{context => (
+      <UserContextConsumer>
+         {context => (
       <div id="login-container">
         <h3>LOGIN -- TechCrowdBacking</h3>
-        <form onSubmit={
-         this.handleSubmitBasicAuth
-         //context.toggleUserAuth();
-         //context.updateUserId();
-         }>
+        <form onSubmit={()=> {
+         this.handleSubmitBasicAuth();
+         context.toggleUserAuth();
+         context.updateUserId();
+         }}>
           <div className="input-label">
             <label htmlFor="username">Username</label>
             <input id="username" name="username" className="input" />
@@ -78,7 +78,7 @@ export default class Login extends Component {
         </form>
       </div>
       )}
-      //</UserContextConsumer>
-    //);
+      </UserContextConsumer>
+    );
   }
-//}
+}
