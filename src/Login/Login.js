@@ -53,7 +53,7 @@ export default class Login extends Component {
   render() {
     return (
       //<UserContextConsumer>
-         {context => (
+         //{context => (
       <div id="login-container">
         <h3>LOGIN -- TechCrowdBacking</h3>
         <form onSubmit={
@@ -79,6 +79,6 @@ export default class Login extends Component {
       </div>
       )}
       //</UserContextConsumer>
-    );
+    //);
   }
-}
+//}
