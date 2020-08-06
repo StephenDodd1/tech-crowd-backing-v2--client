@@ -53,7 +53,6 @@ export default class Login extends Component {
     history.push(destination);
   };
   render() {
-     console.log(this.context.userAuth)
     return (
       <UserContextConsumer>
          {context => (
