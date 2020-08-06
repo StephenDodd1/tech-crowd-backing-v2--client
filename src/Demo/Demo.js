@@ -12,7 +12,7 @@ export default class Demo extends Component {
     };
   }
 
-  static contextType = UserContextConsumer;
+  //static contextType = UserContextConsumer;
 
   componentDidMount() {
     fetch(`${config.API_ENDPOINT}/api/posts`, {
