@@ -49,7 +49,7 @@ class App extends Component {
   render() {
     //console.log(this.context.userId)
     return (
-      <UserContextConsumer>
+      /*<UserContextConsumer>*/
         <div className="App">
           <Header />
           <Switch>
@@ -66,7 +66,7 @@ class App extends Component {
             />
           </Switch>
         </div>
-      </UserContextConsumer>
+      //</UserContextConsumer>
     );
   }
 }
