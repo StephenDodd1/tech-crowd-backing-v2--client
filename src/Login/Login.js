@@ -52,7 +52,7 @@ export default class Login extends Component {
   };
   render() {
     return (
-      <UserContextConsumer>
+      //<UserContextConsumer>
          {context => (
       <div id="login-container">
         <h3>LOGIN -- TechCrowdBacking</h3>
@@ -78,7 +78,7 @@ export default class Login extends Component {
         </form>
       </div>
       )}
-      </UserContextConsumer>
+      //</UserContextConsumer>
     );
   }
 }
