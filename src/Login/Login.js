@@ -41,6 +41,7 @@ export default class Login extends Component {
       .then((res) => res.json())
       .then((data) => {
         window.localStorage.setItem(config.JWT_TOKEN, data.jwtToken);
+        console.log(data)
         return this.onLoginSuccess();
       });
     username.value = "";
