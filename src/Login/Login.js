@@ -56,8 +56,8 @@ export default class Login extends Component {
          //{context => (
       <div id="login-container">
         <h3>LOGIN -- TechCrowdBacking</h3>
-        <form onSubmit={this.handleSubmitBasicAuth
-         //context.toggleUserAuth();
+        <form onSubmit={//this.handleSubmitBasicAuth
+         context.toggleUserAuth()
          //context.updateUserId();
          }>
           <div className="input-label">
