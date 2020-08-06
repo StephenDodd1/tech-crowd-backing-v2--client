@@ -9,7 +9,6 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import config from './config';
 import { withRouter } from 'react-router-dom';
 import "./App.css";
-import { UserContextConsumer } from './Context'
 
 class App extends Component {
   constructor(props) {
@@ -49,24 +48,22 @@ class App extends Component {
   render() {
     //console.log(this.context.userId)
     return (
-      /*<UserContextConsumer>*/
-        <div className="App">
-          <Header />
-          <Switch>
-            <Route exact path="/">
-              <Redirect to="/home" />
-            </Route>
-            <Route path="/home" component={Landing} />
-            <Route path="/Signup/" component={Signup} />
-            <Route path="/Login/" component={Login} />
-            <Route path="/Demo/" component={Demo} />
-            <Route
-              path="/CreatePost/"
-              render={() => <CreatePost createPost={this.createPost} />}
-            />
-          </Switch>
-        </div>
-      //</UserContextConsumer>
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Redirect to="/home" />
+          </Route>
+          <Route path="/home" component={Landing} />
+          <Route path="/Signup/" component={Signup} />
+          <Route path="/Login/" component={Login} />
+          <Route path="/Demo/" component={Demo} />
+          <Route
+            path="/CreatePost/"
+            render={() => <CreatePost createPost={this.createPost} />}
+          />
+        </Switch>
+      </div>
     );
   }
 }
