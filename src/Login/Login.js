@@ -19,6 +19,7 @@ export default class Login extends Component {
     };
   }
   static contextType = UserContext
+  static contextType = UserContextConsumer
   handleSubmitBasicAuth = (e) => {
     e.preventDefault();
     const { username, password } = e.target;
