@@ -46,7 +46,7 @@ class App extends Component {
       .then(this.props.history.push("/Demo"));
   };
   render() {
-    console.log(this.context.userId)
+    //console.log(this.context.userId)
     return (
       <div className="App">
         <Header />
