@@ -15,7 +15,7 @@ export default class Login extends Component {
     super(props);
     this.state = {
       error: null,
-      userId: 1,
+      userId: 0,
     };
   }
   handleSubmitBasicAuth = (e) => {
