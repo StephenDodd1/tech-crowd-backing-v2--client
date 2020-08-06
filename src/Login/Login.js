@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import config from "../config";
 import LoginService from "./login-service";
-import { UserContextConsumer } from '../Context'
+import { UserContext, UserContextConsumer } from '../Context'
 
 export default class Login extends Component {
   static defaultProps = {
@@ -18,7 +18,7 @@ export default class Login extends Component {
       userId: 1,
     };
   }
-  static contextType = UserContextConsumer
+  static contextType = UserContext
   handleSubmitBasicAuth = (e) => {
     e.preventDefault();
     const { username, password } = e.target;
