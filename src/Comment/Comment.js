@@ -1,7 +1,7 @@
-import React, { Component, useState } from "react";
+import React, { Component, /*useState*/ } from "react";
 import config from "../config";
 import { Link, withRouter } from "react-router-dom";
-import UserContextConsumer from "../Context";
+//import UserContextConsumer from "../Context";
 
 class Comment extends Component {
   //static contextType = UserContextConsumer;
