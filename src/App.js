@@ -9,6 +9,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import config from './config';
 import { withRouter } from 'react-router-dom';
 import "./App.css";
+import { UserContext } from './Context'
 
 class App extends Component {
   constructor(props) {
