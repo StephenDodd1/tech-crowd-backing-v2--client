@@ -6,10 +6,10 @@ import { BrowserRouter } from 'react-router-dom'
 import { UserContext } from './Context';
 
 ReactDOM.render(
-  <UserContext>
+ // <UserContext>
     <BrowserRouter>
       <App />
-    </BrowserRouter>
-  </UserContext>,
+    </BrowserRouter>,
+ //</UserContext>,
   document.getElementById('root')
 );
