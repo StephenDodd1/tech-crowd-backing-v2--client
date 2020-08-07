@@ -60,6 +60,7 @@ class App extends Component {
     const value = {
       user: this.state.user,
       logoutUser: this.logout,
+      loginUser: this.login
     };
     //console.log(this.context.userId)
     return (
@@ -75,7 +76,7 @@ class App extends Component {
             <Route path="/Signup/" component={Signup} />
 
             <UserContext.Consumer>
-              {({user, login}) => {
+              {({user, loginUser}) => {
                 console.log("login ran");
                 return (
                   <>
@@ -97,7 +98,7 @@ class App extends Component {
                         />
                       )}
                     </UserContext.Consumer>
-                    <Route user={user} login={login} path="/Login/" component={Login} />
+                    <Route user={user} login={loginUser} path="/Login/" component={Login} />
                   </>
                 );
               }}
