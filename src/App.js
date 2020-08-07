@@ -15,8 +15,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: [],
       user: {},
+      posts: [],
     };
     this.logout = this.logout.bind(this);
   }
@@ -72,7 +72,7 @@ class App extends Component {
             <Route path="/Signup/" component={Signup} />
 
             
-            <UserContext.Consumer>
+            <UserContext.Consumer value={value}>
               {({ user, logoutUser }) => (
                 <Route
                   path="/CreatePost/"
@@ -87,7 +87,7 @@ class App extends Component {
                 />
               )}
             </UserContext.Consumer>
-            <UserContext.Consumer>
+            <UserContext.Consumer value={value}>
               {(user) => {
                 console.log('login ran'); return(
               <Route user = {user} path="/Login/" component={Login} />)}}
