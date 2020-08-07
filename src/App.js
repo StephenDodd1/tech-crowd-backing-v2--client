@@ -71,27 +71,33 @@ class App extends Component {
             <Route path="/home" component={Landing} />
             <Route path="/Signup/" component={Signup} />
 
-            
-            
             <UserContext.Consumer>
               {(user) => {
-                <UserContext.Consumer >
-                {({ user, logoutUser }) => (
-                  <Route
-                    path="/CreatePost/"
-                    render={() => {
-                      return (
-                        <>
-                          <LogoutButton onClick={logoutUser} />
-                          <CreatePost value={user} createPost={this.createPost} />
-                        </>
-                      );
-                    }}
-                  />
-                )}
-              </UserContext.Consumer>
-                console.log('login ran'); return(
-              <Route user = {user} path="/Login/" component={Login} />)}}
+                console.log("login ran");
+                return (
+                  <>
+                    <UserContext.Consumer>
+                      {({ user, logoutUser }) => (
+                        <Route
+                          path="/CreatePost/"
+                          render={() => {
+                            return (
+                              <>
+                                <LogoutButton onClick={logoutUser} />
+                                <CreatePost
+                                  value={user}
+                                  createPost={this.createPost}
+                                />
+                              </>
+                            );
+                          }}
+                        />
+                      )}
+                    </UserContext.Consumer>
+                    <Route user={user} path="/Login/" component={Login} />
+                  </>
+                );
+              }}
             </UserContext.Consumer>
           </Switch>
         </div>
