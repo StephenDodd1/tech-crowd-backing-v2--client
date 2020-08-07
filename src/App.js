@@ -70,11 +70,7 @@ class App extends Component {
             <Route path="/Demo/" component={Demo} />
             <Route path="/home" component={Landing} />
             <Route path="/Signup/" component={Signup} />
-            <UserContext.Consumer>
-              {(user) => {
-                console.log('login ran'); return(
-              <Route user = {user} path="/Login/" component={Login} />)}}
-            </UserContext.Consumer>
+
             
             <UserContext.Consumer>
               {({ user, logoutUser }) => (
@@ -90,6 +86,11 @@ class App extends Component {
                   }}
                 />
               )}
+            </UserContext.Consumer>
+            <UserContext.Consumer>
+              {(user) => {
+                console.log('login ran'); return(
+              <Route user = {user} path="/Login/" component={Login} />)}}
             </UserContext.Consumer>
           </Switch>
         </div>
