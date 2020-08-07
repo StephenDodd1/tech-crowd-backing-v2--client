@@ -11,11 +11,12 @@ export default class Login extends Component {
     },
     onLoginSuccess: () => {},
   };
+  static contextType = UserContext
   constructor(props) {
     super(props);
     this.state = {
       error: null,
-      userId: 1,
+      userId: null,
     };
   }
   handleSubmitBasicAuth = (e) => {
@@ -49,6 +50,7 @@ export default class Login extends Component {
     console.log(this.state.userId);
     const { location, history } = this.props;
     const destination = (location.state || {}).from || "/Demo";
+    this.context.login()
     history.push(destination);
   };
   render() {
