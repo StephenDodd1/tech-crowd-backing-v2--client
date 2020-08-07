@@ -60,7 +60,7 @@ class App extends Component {
     };
     //console.log(this.context.userId)
     return (
-      <UserContext.Provider>
+      <UserContext.Provider value={value}>
         <div className="App">
           <Header />
           <Switch>
@@ -72,7 +72,7 @@ class App extends Component {
             <Route path="/Signup/" component={Signup} />
 
             
-            <UserContext.Consumer value={value}>
+            <UserContext.Consumer >
               {({ user, logoutUser }) => (
                 <Route
                   path="/CreatePost/"
@@ -87,7 +87,7 @@ class App extends Component {
                 />
               )}
             </UserContext.Consumer>
-            <UserContext.Consumer value={value}>
+            <UserContext.Consumer>
               {(user) => {
                 console.log('login ran'); return(
               <Route user = {user} path="/Login/" component={Login} />)}}
