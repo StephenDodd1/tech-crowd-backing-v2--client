@@ -67,6 +67,7 @@ class App extends Component {
             <Route exact path="/">
               <Redirect to="/home" />
             </Route>
+            <Route path="/Demo/" component={Demo} />
             <Route path="/home" component={Landing} />
             <Route path="/Signup/" component={Signup} />
             <UserContext.Consumer>
@@ -74,7 +75,7 @@ class App extends Component {
                 console.log('login ran'); return(
               <Route user = {user} path="/Login/" component={Login} />)}}
             </UserContext.Consumer>
-            <Route path="/Demo/" component={Demo} />
+            
             <UserContext.Consumer>
               {({ user, logoutUser }) => (
                 <Route
