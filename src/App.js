@@ -23,6 +23,9 @@ class App extends Component {
   logout() {
     this.setState({ user: {} });
   }
+  login(userid) {
+    this.setState({ user: { userId: userid}})
+  }
   createPost = (e) => {
     e.preventDefault();
     const type = e.target.type.value;
@@ -72,7 +75,7 @@ class App extends Component {
             <Route path="/Signup/" component={Signup} />
 
             <UserContext.Consumer>
-              {(user) => {
+              {({user, login}) => {
                 console.log("login ran");
                 return (
                   <>
@@ -94,7 +97,7 @@ class App extends Component {
                         />
                       )}
                     </UserContext.Consumer>
-                    <Route user={user} path="/Login/" component={Login} />
+                    <Route user={user} login={login} path="/Login/" component={Login} />
                   </>
                 );
               }}
