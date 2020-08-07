@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import config from '../config';
 import { Link } from "react-router-dom";
 import Post from "../Post/Post";
-import {UserContextConsumer} from "../Context";
+import UserContext from "../Context";
 
 export default class Demo extends Component {
   constructor(props) {
@@ -12,7 +12,6 @@ export default class Demo extends Component {
     };
   }
 
-  static contextType = UserContextConsumer;
 
   componentDidMount() {
     fetch(`${config.API_ENDPOINT}/api/posts`, {
