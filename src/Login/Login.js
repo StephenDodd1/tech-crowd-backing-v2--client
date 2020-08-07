@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import config from "../config";
 import LoginService from "./login-service";
+import UserContext from '../Context'
 
 export default class Login extends Component {
   static defaultProps = {
@@ -53,6 +54,8 @@ export default class Login extends Component {
     history.push(destination);
   };
   render() {
+
+  Login.contextType=UserContext;
     return (
       //<UserContext.Consumer></UserContext.Consumer>
       <div id="login-container">
