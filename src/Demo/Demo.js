@@ -12,7 +12,6 @@ export default class Demo extends Component {
     };
   }
 
-
   componentDidMount() {
     fetch(`${config.API_ENDPOINT}/api/posts`, {
       method: "GET",
@@ -56,6 +55,7 @@ export default class Demo extends Component {
   };
 
   render() {
+    console.log('demo render ran')
     return (
       <div id="forum-container">
         <div id="forum-controls">
