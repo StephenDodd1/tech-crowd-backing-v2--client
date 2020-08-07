@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import config from '../config';
 import { Link } from "react-router-dom";
 import Post from "../Post/Post";
-import UserContext from "../Context";
+//import UserContext from "../Context";
 
 export default class Demo extends Component {
   constructor(props) {
@@ -55,7 +55,7 @@ export default class Demo extends Component {
   };
 
   render() {
-    console.log('demo render ran')
+    console.log('demo render ran');
     return (
       <div id="forum-container">
         <div id="forum-controls">
