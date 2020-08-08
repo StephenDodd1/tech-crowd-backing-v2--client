@@ -25,7 +25,7 @@ export default class Demo extends Component {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
+        console.log(data);
         this.setState({ posts: data });
       });
   }
@@ -60,12 +60,12 @@ export default class Demo extends Component {
     console.log("demo render ran");
     return (
       <div id="forum-container">
-        <LogoutButton onClick={this.context.logoutUser} />
         <div id="forum-controls">
           <div id="button-container">
             <button id="create-post-button" type="submit" className="right">
               <Link to="../../../CreatePost/">+ Post</Link>
             </button>
+            <LogoutButton onClick={this.context.logoutUser} />
           </div>
           <div id="search-barcontainer">
             <h5>Search:</h5>
