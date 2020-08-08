@@ -68,7 +68,7 @@ export default class Demo extends Component {
             <h5>Search:</h5>
             <form onSubmit={this.searchPosts}>
               <input
-                placeholder="Type a company or technology, then press enter to search"
+                placeholder="Search for a company or technology"
                 id="search-bar-input"
                 name="search"
               />
