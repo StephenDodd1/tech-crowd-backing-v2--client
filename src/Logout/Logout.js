@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { Component } from "react";
 
-export default function LogoutButton() {
-  defaultProps ={ }
-  return (
-    <div>
-      <button onClick={props.logout}>Logout</button>
-    </div>)
+export default class LogoutButton extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <button onClick={this.props.logout}>Logout</button>
+      </div>
+    );
+  }
 }
