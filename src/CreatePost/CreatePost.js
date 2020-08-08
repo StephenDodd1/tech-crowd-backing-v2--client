@@ -1,18 +1,19 @@
 import React, { Component } from "react";
 import config from "../config";
 import { withRouter } from "react-router-dom";
-//import UserContextConsumer from '../Context'
+import { UserContext } from '../Context'
 
 class CreatePost extends Component {
-  //static contextType = UserContextConsumer
+  static contextType = UserContext
 
 
   createPost = (e) => {
+    console.log(this.context.user)
     e.preventDefault();
     const type = e.target.type.value;
     const title = e.target.title.value;
     const content = e.target.content.value;
-    const userid = e.target.userid.value;
+    const userid = this.context.user;
     const newPost = {
       userid,
       type,
