@@ -91,6 +91,7 @@ input {
   height: 26px;
   font-size: 18px;
   margin-bottom: 10px;
+  width: 400px
 }
 label,
 select {
@@ -193,5 +194,10 @@ a>.fa {
     padding-bottom: 4px;
     transform: rotate(357deg);
     font-size: 55px;
+  }
+  input {
+    height: 26px;
+    font-size: 18px;
+    margin-bottom: 10px;
   }
 }
