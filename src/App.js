@@ -24,7 +24,7 @@ class App extends Component {
     this.setState({ user: {} });
   }
   login(userid) {
-    this.setState({userid})
+    this.setState({ user: {userid} })
   }
   createPost = (e) => {
     e.preventDefault();
