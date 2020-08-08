@@ -132,6 +132,10 @@ button {
   margin-right: 3px;
   font-size: 17px;
 }
+#post-button {
+  background: black;
+  color: white
+}
 .delete-button {
    height: 21px;
    width: 21px;

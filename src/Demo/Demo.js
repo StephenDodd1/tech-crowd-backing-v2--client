@@ -63,7 +63,9 @@ export default class Demo extends Component {
         <div id="forum-controls">
           <div id="button-container">
             <button id="create-post-button" type="submit" className="right">
-              <Link to="../../../CreatePost/">+ Post</Link>
+              <Link id="post-button" to="../../../CreatePost/">
+                + Post
+              </Link>
             </button>
             <LogoutButton onClick={this.context.logoutUser} />
           </div>
