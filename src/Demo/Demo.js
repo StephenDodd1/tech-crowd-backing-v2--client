@@ -59,7 +59,7 @@ export default class Demo extends Component {
     console.log("demo render ran");
     return (
       <div id="forum-container">
-        <LogoutButton onClick={this.context.logout} />
+        <LogoutButton logout={this.context.logout} />
         <div id="forum-controls">
           <div id="button-container">
             <button id="create-post-button" type="submit" className="right">
