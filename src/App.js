@@ -28,11 +28,13 @@ class App extends Component {
     this.setState({ user: { userId: userid } });
   }
   createPost = (e) => {
+    console.log(this.context)
+    console.log(e.target.user_id.value)
     e.preventDefault();
     const type = e.target.type.value;
     const title = e.target.title.value;
     const content = e.target.content.value;
-    const userid = 1;
+    const userid = e.target.user_id.value;
     const newPost = {
       userid,
       type,
@@ -55,7 +57,8 @@ class App extends Component {
           posts: data,
         })
       )
-      .then(this.props.history.push("/Demo"));
+      .then(res => {this.props.history.push("/Demo")
+      return alert("Refresh the page to view your post")});
   };
   render() {
     const value = {
@@ -94,7 +97,7 @@ class App extends Component {
                             return (
                               <>
                                 <CreatePost
-                                  value={user}
+                                  user={user}
                                   createPost={this.createPost}
                                 />
                               </>
