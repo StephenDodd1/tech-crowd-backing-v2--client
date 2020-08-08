@@ -42,6 +42,7 @@ export default class Login extends Component {
       .then((data) => {
         window.localStorage.setItem(config.JWT_TOKEN, data.data.jwtToken);
         this.setState({userId: data.data.userId})
+        this.context.login(data.data.userId)
         console.log(data.data)
         console.log(this.context)
         return this.onLoginSuccess();
@@ -53,7 +54,6 @@ export default class Login extends Component {
     console.log(this.state.userId);
     const { location, history } = this.props;
     const destination = (location.state || {}).from || "/Demo";
-    this.context.login
     history.push(destination);
   };
   render() {
