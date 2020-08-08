@@ -13,7 +13,7 @@ class CreatePost extends Component {
     const type = e.target.type.value;
     const title = e.target.title.value;
     const content = e.target.content.value;
-    const userid = this.context.user;
+    const userid = this.context.user.userId;
     const newPost = {
       userid,
       type,
