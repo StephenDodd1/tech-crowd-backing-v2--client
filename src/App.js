@@ -28,11 +28,12 @@ class App extends Component {
     this.setState({ user: { userId: userid } });
   }
   createPost = (e) => {
+    console.log(this.context)
     e.preventDefault();
     const type = e.target.type.value;
     const title = e.target.title.value;
     const content = e.target.content.value;
-    const userid = this.context.user.user;
+    const userid = this.context.user.userId;
     const newPost = {
       userid,
       type,
