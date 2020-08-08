@@ -60,7 +60,6 @@ export default class Login extends Component {
 
   console.log(this.context)
     return (
-      //<UserContext.Consumer></UserContext.Consumer>
       <div id="login-container">
         <h3>LOGIN -- TechCrowdBacking</h3>
         <form onSubmit={this.handleSubmitBasicAuth
