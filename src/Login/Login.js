@@ -44,7 +44,7 @@ export default class Login extends Component {
         this.setState({userId: data.data.userid})
         this.context.loginUser(data.data.userid)
         console.log(data.data)
-        console.log(this.context)
+        console.log(this.context.userId)
         return this.onLoginSuccess();
       });
     username.value = "";
