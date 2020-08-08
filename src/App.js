@@ -56,7 +56,8 @@ class App extends Component {
           posts: data,
         })
       )
-      .then(this.props.history.push("/Demo"));
+      .then(res => {this.props.history.push("/Demo")
+      return alert("Refresh the page to view your post")});
   };
   render() {
     const value = {
