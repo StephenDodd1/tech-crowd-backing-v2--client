@@ -56,7 +56,7 @@ export default class Login extends Component {
   render() {
 
   Login.contextType=UserContext;
-  console.log(this.context, Login.context)
+  console.log(this.UserContext)
     return (
       //<UserContext.Consumer></UserContext.Consumer>
       <div id="login-container">
