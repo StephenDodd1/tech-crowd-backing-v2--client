@@ -1,7 +1,9 @@
 {
   "name": "tech-crowd-backing-v2--client",
+  "author": "Stephen Kyle Dodd",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://TechCrowdBacking.com/public_html",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",

@@ -136,6 +136,10 @@ button {
   background: black;
   color: white
 }
+#update-cancel {
+  background: black;
+  color: white;
+}
 .delete-button {
    height: 21px;
    width: 21px;

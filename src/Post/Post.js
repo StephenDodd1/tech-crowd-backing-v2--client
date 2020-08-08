@@ -21,7 +21,8 @@ class Post extends Component {
     const content = e.target.content.value;
     const type = e.target.type.value;
     const post = { title, content, type };
-    fetch(`${config.API_ENDPOINT}/api/posts/${e.target.post_id.value}`, {
+    console.log(e.target.post_id.value)
+    fetch(`${config.API_ENDPOINT}/api/post/${e.target.post_id.value}`, {
       method: "PATCH",
       mode: "cors",
       credentials: "same-origin",
@@ -38,8 +39,7 @@ class Post extends Component {
         return res.json();
       })
       .then(res=> {
-        this.props.history.push("/Demo");
-        return alert("Refresh the page to view your post");
+        this.props.history.push("/");
       })
   };
 

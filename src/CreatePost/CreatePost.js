@@ -33,8 +33,7 @@ class CreatePost extends Component {
     })
       .then((res) => res.json())
       .then((res) => {
-        this.props.history.push("/Demo");
-        return alert("Refresh the page to view your post");
+        this.props.history.push("/#");
       });
   };*/
 

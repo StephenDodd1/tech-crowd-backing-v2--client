@@ -69,12 +69,13 @@ export default class Login extends Component {
             <input id="username" name="username" className="input" />
           </div>
           <div className="input-label">
-            <label htmlFor="current-password">Password</label>
+            <label htmlFor="password">Password</label>
             <input
-              id="current-password"
+              id="password"
               name="password"
               type="password"
               className="input"
+              autocomplete="current-password"
             />
           </div>
           <button type="submit">Submit</button>

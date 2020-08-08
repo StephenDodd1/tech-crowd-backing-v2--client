@@ -1,21 +1,19 @@
 import React, { Component, /*useState*/ } from "react";
 import config from "../config";
 import { Link, withRouter } from "react-router-dom";
-//import UserContextConsumer from "../Context";
+import { UserContext } from "../Context";
 
 class Comment extends Component {
-  //static contextType = UserContextConsumer;
   constructor(props) {
     super(props);
   }
- /* componentDidUpdate() {
-    const [comments] = React.useState({ comments: this.context.comments });
-  }*/
+  static contextType = UserContext;
   submitComment = (e) => {
-    //console.log(this.context.comments);
     e.preventDefault();
+    console.log(this.context)
     const comment = e.target.comment.value;
-    const addedComment = { comment };
+    const userid = this.context.user.userId;
+    const addedComment = { comment, userid };
     fetch(`${config.API_ENDPOINT}/api/${this.props.postId}/comment`, {
       method: "POST",
       mode: "cors",
@@ -29,11 +27,9 @@ class Comment extends Component {
       .then((res) => res.json())
       .then(res=> {
         this.props.history.push("/Demo");
-        return alert("Refresh the page to view your comment");
       })
   };
   render() {
-    //console.log(this.context.comments);
     return (
       <div>
         <form onSubmit={this.submitComment}>
