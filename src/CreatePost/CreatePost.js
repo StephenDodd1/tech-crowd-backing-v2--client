@@ -44,7 +44,7 @@ class CreatePost extends Component {
         <h3>What is your post about?</h3>
         <form onSubmit={this.props.createPost}>
           &emsp;&emsp;&emsp;
-          <input type="hidden" name="post_id" value={userId} />
+          <input type="hidden" name="user_id" value={userId} />
           <select name="type" defaultValue="select below">
             <option value="Technology">Technology</option>
             <option value="Investment">Investment</option>
