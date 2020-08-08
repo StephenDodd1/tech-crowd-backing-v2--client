@@ -8,7 +8,6 @@ class CreatePost extends Component {
 
 
   createPost = (e) => {
-    console.log(this.context)
     e.preventDefault();
     const type = e.target.type.value;
     const title = e.target.title.value;
