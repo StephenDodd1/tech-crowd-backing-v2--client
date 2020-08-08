@@ -19,6 +19,7 @@ class App extends Component {
       posts: [],
     };
     this.logout = this.logout.bind(this);
+    this.login = this.login.bind(this);
   }
   logout() {
     this.setState({ user: {} });
