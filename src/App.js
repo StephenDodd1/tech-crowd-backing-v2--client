@@ -77,18 +77,17 @@ class App extends Component {
             <Route path="/Signup/" component={Signup} />
 
             <UserContext.Consumer>
-              {({user, loginUser}) => {
+              {({ user, loginUser, logoutUser }) => {
                 console.log("login ran");
                 return (
                   <>
                     <UserContext.Consumer>
-                      {({ user, logoutUser }) => (
+                      {({ user }) => (
                         <Route
                           path="/CreatePost/"
                           render={() => {
                             return (
                               <>
-                                <LogoutButton onClick={logoutUser} />
                                 <CreatePost
                                   value={user}
                                   createPost={this.createPost}
@@ -100,6 +99,7 @@ class App extends Component {
                       )}
                     </UserContext.Consumer>
                     <Route user={user} login={loginUser} path="/Login/" component={Login} />
+                    <LogoutButton onClick={logoutUser} />
                   </>
                 );
               }}
