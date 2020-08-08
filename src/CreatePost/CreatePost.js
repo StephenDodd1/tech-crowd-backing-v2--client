@@ -6,14 +6,15 @@ import { UserContext } from '../Context'
 class CreatePost extends Component {
   static contextType = UserContext
 
+//This was moved up in the tree to src/App/App.js
 
-  createPost = (e) => {
+  /*createPost = (e) => {
     console.log(this.context)
     e.preventDefault();
     const type = e.target.type.value;
     const title = e.target.title.value;
     const content = e.target.content.value;
-    const userid = this.context.user.userId;
+    const userid = e.target.user_id.value;
     const newPost = {
       userid,
       type,
@@ -35,7 +36,7 @@ class CreatePost extends Component {
         this.props.history.push("/Demo");
         return alert("Refresh the page to view your post");
       });
-  };
+  };*/
 
   render() {
   const userId = this.context.user.userId

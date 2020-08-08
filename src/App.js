@@ -29,6 +29,7 @@ class App extends Component {
   }
   createPost = (e) => {
     console.log(this.context)
+    console.log(e.target.user_id.value)
     e.preventDefault();
     const type = e.target.type.value;
     const title = e.target.title.value;
