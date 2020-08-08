@@ -94,7 +94,7 @@ class App extends Component {
                             return (
                               <>
                                 <CreatePost
-                                  value={user}
+                                  user={user}
                                   createPost={this.createPost}
                                 />
                               </>
