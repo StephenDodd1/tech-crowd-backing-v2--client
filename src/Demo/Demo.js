@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import config from '../config';
+import config from "../config";
 import { Link } from "react-router-dom";
 import Post from "../Post/Post";
-//import UserContext from "../Context";
+import { UserContext } from "../Context";
 
 export default class Demo extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ export default class Demo extends Component {
       posts: [],
     };
   }
-
+  static contextType=UserContext
   componentDidMount() {
     fetch(`${config.API_ENDPOINT}/api/posts`, {
       method: "GET",
@@ -19,7 +19,7 @@ export default class Demo extends Component {
       credentials: "same-origin",
       headers: {
         "Content-type": "application/json",
-        'Authorization': `Bearer ${config.API_TOKEN}`
+        Authorization: `Bearer ${config.API_TOKEN}`,
       },
     })
       .then((res) => res.json())
@@ -36,28 +36,29 @@ export default class Demo extends Component {
       credentials: "same-origin",
       headers: {
         "Content-type": "application/json",
-        'Authorization': `Bearer ${config.API_TOKEN}`
+        Authorization: `Bearer ${config.API_TOKEN}`,
       },
     })
       .then((posts) => {
         if (!posts) {
           return alert("No results matched your search.");
         } else {
-          console.log(posts)
+          console.log(posts);
           return posts.json();
         }
       })
       .then((data) => {
-        console.log(data)
+        console.log(data);
         return this.setState({ posts: data });
       });
     e.target.reset();
   };
 
   render() {
-    console.log('demo render ran');
+    console.log("demo render ran");
     return (
       <div id="forum-container">
+        <LogoutButton onClick={logoutUser} />
         <div id="forum-controls">
           <div id="button-container">
             <button id="create-post-button" type="submit" className="right">

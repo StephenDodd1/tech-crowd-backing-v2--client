@@ -77,19 +77,13 @@ class App extends Component {
             <Route path="/Signup/" component={Signup} />
 
             <UserContext.Consumer>
-              {({ user, loginUser, logoutUser }) => {
+              {({ user, loginUser }) => {
                 return (
                   <>
                     <Route
                       path="/Demo/"
                       render={() => {
-                        return (
-                          <Demo
-                            render={() => {
-                              return <LogoutButton onClick={logoutUser} />;
-                            }}
-                          />
-                        );
+                        return <Demo logout={logoutUser} />;
                       }}
                     />
                     <UserContext.Consumer>
