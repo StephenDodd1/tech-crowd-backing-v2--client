@@ -3,6 +3,6 @@ import React from 'react'
 export default function LogoutButton() {
   return (
     <div>
-      <button>Logout</button>
+      <button onclick={this.props.logout}>Logout</button>
     </div>)
 }
