@@ -126,7 +126,8 @@ textarea:focus {
 }
 button {
   border-radius: 4px;
-  background: lightgray;
+  background: black;
+  color: white;
   height: 24px;
   margin-right: 3px;
   font-size: 17px;
