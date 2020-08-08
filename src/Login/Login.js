@@ -41,8 +41,8 @@ export default class Login extends Component {
       .then((res) => res.json())
       .then((data) => {
         window.localStorage.setItem(config.JWT_TOKEN, data.data.jwtToken);
-        this.setState({userId: data.data.userId})
-        this.context.loginUser(data.data.userId)
+        this.setState({userId: data.data.userid})
+        this.context.loginUser(data.data.userid)
         console.log(data.data)
         console.log(this.context)
         return this.onLoginSuccess();
@@ -51,7 +51,7 @@ export default class Login extends Component {
     password.value = "";
   };
   onLoginSuccess = () => {
-    console.log(this.state.userId);
+    console.log('context on login stores', this.context.user);
     const { location, history } = this.props;
     const destination = (location.state || {}).from || "/Demo";
     history.push(destination);
