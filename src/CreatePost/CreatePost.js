@@ -38,7 +38,7 @@ class CreatePost extends Component {
   };
 
   render() {
-  const userId = this.context
+  const userId = this.context.user.userId
     return (
       <div>
         <h3>What is your post about?</h3>

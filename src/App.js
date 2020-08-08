@@ -33,7 +33,7 @@ class App extends Component {
     const type = e.target.type.value;
     const title = e.target.title.value;
     const content = e.target.content.value;
-    const userid = this.context.user.userId;
+    const userid = e.target.user_id.value;
     const newPost = {
       userid,
       type,
