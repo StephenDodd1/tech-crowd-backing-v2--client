@@ -25,7 +25,7 @@ class App extends Component {
     this.setState({ user: {} });
   }
   login(userid) {
-    this.setState({ user: {userId: userid} })
+    this.setState({ user: { userId: userid } });
   }
   createPost = (e) => {
     e.preventDefault();
@@ -61,7 +61,7 @@ class App extends Component {
     const value = {
       user: this.state.user,
       logoutUser: this.logout,
-      loginUser: this.login
+      loginUser: this.login,
     };
     //console.log(this.context.userId)
     return (
@@ -72,15 +72,26 @@ class App extends Component {
             <Route exact path="/">
               <Redirect to="/home" />
             </Route>
-            <Route path="/Demo/" component={Demo} />
+
             <Route path="/home" component={Landing} />
             <Route path="/Signup/" component={Signup} />
 
             <UserContext.Consumer>
-              {({ user, loginUser, logoutUser }) => {
-                console.log("login ran");
+              {({ user, loginUser }) => {
                 return (
                   <>
+                    <Route
+                      path="/Demo/"
+                      render={() => {
+                        return (
+                          <Demo
+                            render={() => {
+                              return <LogoutButton onClick={logoutUser} />;
+                            }}
+                          />
+                        );
+                      }}
+                    />
                     <UserContext.Consumer>
                       {({ user }) => (
                         <Route
@@ -98,8 +109,12 @@ class App extends Component {
                         />
                       )}
                     </UserContext.Consumer>
-                    <Route user={user} login={loginUser} path="/Login/" component={Login} />
-                    <LogoutButton onClick={logoutUser} />
+                    <Route
+                      user={user}
+                      login={loginUser}
+                      path="/Login/"
+                      component={Login}
+                    />
                   </>
                 );
               }}
