@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import config from "../config";
 import { Link } from "react-router-dom";
 import Post from "../Post/Post";
+import LogoutButton from '../Logout/Logout'
 import { UserContext } from "../Context";
 
 export default class Demo extends Component {
@@ -58,7 +59,7 @@ export default class Demo extends Component {
     console.log("demo render ran");
     return (
       <div id="forum-container">
-        <LogoutButton onClick={logoutUser} />
+        <LogoutButton onClick={logout} />
         <div id="forum-controls">
           <div id="button-container">
             <button id="create-post-button" type="submit" className="right">
