@@ -63,6 +63,12 @@ h2 {
   text-decoration: underline overline;
   margin: 10px;
 }
+#button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+}
 #forum-container {
   border: double 1.5px white;
   border-radius: 10px;
@@ -120,10 +126,15 @@ textarea:focus {
 }
 button {
   border-radius: 4px;
-  background: lightgray;
+  background: black;
+  color: white;
   height: 24px;
   margin-right: 3px;
   font-size: 17px;
+}
+#post-button {
+  background: black;
+  color: white
 }
 .delete-button {
    height: 21px;
