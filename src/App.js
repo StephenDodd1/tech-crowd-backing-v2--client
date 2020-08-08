@@ -6,7 +6,6 @@ import Signup from "./Signup/Signup";
 import Login from "./Login/Login";
 import Demo from "./Demo/Demo";
 import CreatePost from "./CreatePost/CreatePost";
-import LogoutButton from "./Logout/Logout";
 import { Route, Switch, Redirect, withRouter } from "react-router-dom";
 import config from "./config";
 import "./App.css";
@@ -22,6 +21,7 @@ class App extends Component {
     this.login = this.login.bind(this);
   }
   logout() {
+    console.log('logout ran')
     this.setState({ user: {} });
   }
   login(userid) {
