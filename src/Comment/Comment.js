@@ -28,8 +28,7 @@ class Comment extends Component {
     })
       .then((res) => res.json())
       .then(res=> {
-        this.props.history.push("/Demo");
-        return alert("Refresh the page to view your comment");
+        this.props.history.push("/#/Demo");
       })
   };
   render() {

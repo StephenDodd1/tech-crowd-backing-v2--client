@@ -57,8 +57,7 @@ class App extends Component {
           posts: data,
         })
       )
-      .then(res => {this.props.history.push("/Demo")
-      return alert("Refresh the page to view your post")});
+      .then(res => this.props.history.push("/"))
   };
   render() {
     const value = {
@@ -75,7 +74,6 @@ class App extends Component {
             <Route exact path="/">
               <Redirect to="/home" />
             </Route>
-
             <Route path="/home" component={Landing} />
             <Route path="/Signup/" component={Signup} />
 
@@ -116,6 +114,9 @@ class App extends Component {
                 );
               }}
             </UserContext.Consumer>
+            <Route path="*">
+              <Redirect to="/Demo" />
+            </Route>
           </Switch>
         </div>
       </UserContext.Provider>
