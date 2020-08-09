@@ -115,7 +115,7 @@ class App extends Component {
               }}
             </UserContext.Consumer>
             <Route path="*">
-              <Redirect to="/Demo" />
+              <Redirect to="/" />
             </Route>
           </Switch>
         </div>
