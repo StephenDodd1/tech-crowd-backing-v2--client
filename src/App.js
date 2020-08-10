@@ -65,7 +65,6 @@ class App extends Component {
       logoutUser: this.logout,
       loginUser: this.login,
     };
-    //console.log(this.context.userId)
     return (
       <UserContext.Provider value={value}>
         <div className="App">
@@ -114,8 +113,8 @@ class App extends Component {
                 );
               }}
             </UserContext.Consumer>
-            <Route path="*">
-              <Redirect to="/" />
+            <Route path="/:route">
+              <Redirect to="/Demo" />
             </Route>
           </Switch>
         </div>
