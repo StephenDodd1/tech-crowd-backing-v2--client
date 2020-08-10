@@ -11,7 +11,7 @@ class Comment extends Component {
   submitComment = (e) => {
     e.preventDefault();
     const comment = e.target.comment.value;
-    const userId = this.context.user.userId
+    const userId = this.context.user.userId;
     const addedComment = { comment, userId };
     fetch(`${config.API_ENDPOINT}/api/${this.props.postId}/comment`, {
       method: "POST",
