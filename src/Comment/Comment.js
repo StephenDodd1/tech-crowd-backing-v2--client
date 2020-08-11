@@ -11,8 +11,8 @@ class Comment extends Component {
   submitComment = (e) => {
     e.preventDefault();
     const comment = e.target.comment.value;
-    const userId = this.context.user.userId;
-    const addedComment = { comment, userId };
+    const userid = this.context.user.userId;
+    const addedComment = { comment, userid };
     fetch(`${config.API_ENDPOINT}/api/${this.props.postId}/comment`, {
       method: "POST",
       mode: "cors",
@@ -25,7 +25,7 @@ class Comment extends Component {
     })
       .then((res) => res.json())
       .then(res=> {
-        this.props.history.push("/#/Demo");
+        this.props.history.push("/Demo");
       })
   };
   render() {
