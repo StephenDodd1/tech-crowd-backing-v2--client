@@ -18,7 +18,7 @@ render() {
             <label htmlFor='content-input'>Post&emsp;</label>
             <textarea id='content-input' name='content' defaultValue={this.props.content} />
             <button type='submit' className='submit-button' >Submit</button>
-            <button id='update-cancel' type='click' ><Link to='../../../Demo/' >Cancel</Link></button>
+            <button type='click' ><Link to='../../../Demo/' id='update-cancel' >Cancel</Link></button>
          </form>
       </div>
       )
