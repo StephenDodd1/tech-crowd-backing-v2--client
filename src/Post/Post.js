@@ -21,6 +21,7 @@ class Post extends Component {
     const content = e.target.content.value;
     const type = e.target.type.value;
     const post = { title, content, type };
+    console.log(post)
     fetch(`${config.API_ENDPOINT}/api/posts/${e.target.post_id.value}`, {
       method: "PATCH",
       mode: "cors",
