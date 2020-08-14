@@ -22,13 +22,13 @@ class Post extends Component {
     const type = e.target.type.value;
     const post = { title, content, type };
     console.log(post)
+    console.log(e.target.post_id.value)
     fetch(`${config.API_ENDPOINT}/api/posts/${e.target.post_id.value}`, {
       method: "PATCH",
       mode: "cors",
       credentials: "same-origin",
       headers: {
         "Content-type": "application/json",
-        Authorization: `Bearer ${config.API_TOKEN}`,
       },
       body: JSON.stringify(post),
     })
