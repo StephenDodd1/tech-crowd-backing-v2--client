@@ -10,6 +10,7 @@ class Comment extends Component {
   static contextType = UserContext;
   submitComment = (e) => {
     e.preventDefault();
+    console.log(this.context)
     const comment = e.target.comment.value;
     const userid = this.context.user.userId;
     const addedComment = { comment, userid };
