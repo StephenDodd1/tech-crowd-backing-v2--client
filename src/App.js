@@ -21,15 +21,15 @@ class App extends Component {
     this.login = this.login.bind(this);
   }
   logout() {
-    console.log('logout ran')
+    console.log("logout ran");
     this.setState({ user: {} });
   }
   login(userid) {
     this.setState({ user: { userId: userid } });
   }
   createPost = (e) => {
-    console.log(this.context)
-    console.log(e.target.user_id.value)
+    console.log(this.context);
+    console.log(e.target.user_id.value);
     e.preventDefault();
     const type = e.target.type.value;
     const title = e.target.title.value;
@@ -57,7 +57,7 @@ class App extends Component {
           posts: data,
         })
       )
-      .then(res => this.props.history.push("/"))
+      .then((res) => this.props.history.push("/"));
   };
   render() {
     const value = {
