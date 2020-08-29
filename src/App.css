@@ -146,7 +146,9 @@ button {
    padding-bottom: 5px;
    font-size: 8px;
    line-height: 14px;
-   font-weight: bold
+   font-weight: bold;
+   background: black;
+   font: white
 }
 a {
   text-decoration: none;
