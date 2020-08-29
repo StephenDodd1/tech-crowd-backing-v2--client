@@ -21,7 +21,6 @@ class Post extends Component {
     const content = e.target.content.value;
     const type = e.target.type.value;
     const post = { title, content, type };
-    console.log(e.target.post_id.value)
     fetch(`${config.API_ENDPOINT}/api/post/${e.target.post_id.value}`, {
       method: "PATCH",
       mode: "cors",
@@ -44,7 +43,6 @@ class Post extends Component {
   };
 
   updateComments = () => {
-    console.log('updateComments ran')
     return window.location.reload(false);
   };
   componentDidUpdate() {

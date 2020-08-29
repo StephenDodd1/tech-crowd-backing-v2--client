@@ -26,7 +26,6 @@ export default class Login extends Component {
     LoginService.saveAuthToken(
       LoginService.makeBasicAuthToken(username.value, password.value)
     );
-    console.log(LoginService.getAuthToken());
     fetch(`${config.API_ENDPOINT}/api/user`, {
       method: "POST",
       mode: "cors",
@@ -43,22 +42,17 @@ export default class Login extends Component {
         window.localStorage.setItem(config.JWT_TOKEN, data.data.jwtToken);
         this.setState({userId: data.data.user.userid})
         this.context.loginUser(data.data.user.userid)
-        console.log(data.data)
-        console.log(this.context.user.userId)
         return this.onLoginSuccess();
       });
     username.value = "";
     password.value = "";
   };
   onLoginSuccess = () => {
-    console.log('context on login stores', this.context.user);
     const { location, history } = this.props;
     const destination = (location.state || {}).from || "/Demo";
     history.push(destination);
   };
   render() {
-
-  console.log(this.context)
     return (
       <div id="login-container">
         <h3>LOGIN -- TechCrowdBacking</h3>
