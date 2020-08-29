@@ -48,12 +48,12 @@ h1 {
   background: black;
   color: white;
   text-shadow: gray 3px 3px;
-  width: 450px;
+  width: 300px;
   border-left: dotted 2px;
   border-right: dotted 2px;
   padding-bottom: 4px;
   transform: rotate(357deg);
-  font-size: 45px;
+  font-size: 30px;
 }
 h2 {
   text-align: center;
@@ -99,7 +99,7 @@ input {
   margin-bottom: 10px;
 }
 #search-bar-input {
-  width: 350px
+  width: 270px;
 }
 label,
 select {
@@ -134,21 +134,21 @@ button {
 }
 #post-button {
   background: black;
-  color: white
+  color: white;
 }
 #update-cancel {
   background: black;
   color: white;
 }
 .delete-button {
-   height: 21px;
-   width: 21px;
-   padding-bottom: 5px;
-   font-size: 8px;
-   line-height: 14px;
-   font-weight: bold;
-   background: black;
-   color: white
+  height: 21px;
+  width: 21px;
+  padding-bottom: 5px;
+  font-size: 8px;
+  line-height: 14px;
+  font-weight: bold;
+  background: black;
+  color: white;
 }
 a {
   text-decoration: none;
@@ -171,11 +171,11 @@ a {
   flex-direction: row;
 }
 .fa-container {
-   display: flex;
-   flex-direction: row;
-   background: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  background: whitesmoke;
 }
-a>.fa {
+a > .fa {
   margin-left: 12px;
   font-size: 25px;
   padding-top: 15px;
@@ -194,6 +194,15 @@ a>.fa {
 }
 .submit-post {
   margin-left: 60px;
+}
+@media only screen and (min-width: 450px) {
+  h1 {
+    width: 450px;
+    font-size: 45px;
+  }
+  #search-bar-input {
+    width: 350px;
+  }
 }
 @media only screen and (min-width: 820px) {
   h1 {
