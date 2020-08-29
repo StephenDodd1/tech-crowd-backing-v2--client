@@ -36,7 +36,6 @@ class CreatePost extends Component {
         this.props.history.push("/#");
       });
   };*/
-
   render() {
   const userId = this.context.user.userId
     return (
@@ -61,7 +60,7 @@ class CreatePost extends Component {
           <button className="submit-post" type="submit">
             Submit
           </button>
-          <button type="click">Cancel</button>
+          <button type="click" onClick={() => {history.push('/Demo')}}>Cancel</button>
         </form>
       </div>
     );
