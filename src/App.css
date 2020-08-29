@@ -191,6 +191,8 @@ a > .fa {
 }
 .submit-button {
   margin-left: 3px;
+  background: black;
+  color: white;
 }
 .submit-post {
   margin-left: 60px;
