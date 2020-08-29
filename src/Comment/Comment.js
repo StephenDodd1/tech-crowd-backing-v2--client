@@ -42,7 +42,7 @@ class Comment extends Component {
             Submit
           </button>
           <button type="click" className='submit-button'>
-            <Link to="../../../Demo/">Cancel</Link>
+            <Link className='submit-button' to="../../../Demo/">Cancel</Link>
           </button>
         </form>
       </div>
