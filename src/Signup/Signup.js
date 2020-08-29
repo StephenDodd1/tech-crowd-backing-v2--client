@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import config from "../config";
 
 export default class Signup extends Component {
+  constructor(props){
+    super(props);
+  }
   handleSignup = (e) => {
     e.preventDefault();
     const t = e.target;
@@ -36,41 +39,42 @@ export default class Signup extends Component {
         if (!res.ok) {
           throw new Error("Something went wrong");
         }
-        return res.json(200, alert("user created"));
+        res.json(200, alert("user created"));
+        return this.props.history.push('/Login')
       });
     }
   };
   render() {
     return (
-      <div name="signup-form-container">
+      <div id="signup-form-container">
         <h3>Signup -- TechCrowdBacking</h3>
         <form onSubmit={this.handleSignup}>
           <div className="input-label">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Email <span className="required">&#42;</span></label>
             <input name="email" className="input" />
           </div>
           <div className="input-label">
-            <label htmlFor="password">Create Password</label>
+            <label htmlFor="password">Create Password <span className="required">&#42;</span></label>
             <input name="password" type="password" className="input" />
           </div>
           <div className="input-label">
-            <label htmlFor="confirm-password">Confirm Password</label>
+            <label htmlFor="confirm-password">Confirm Password <span className="required">&#42;</span></label>
             <input name="confirm-password" type="password" className="input" />
           </div>
           <div className="input-label">
-            <label htmlFor="username">Screen Name</label>
+            <label htmlFor="username">Username <span className="required">&#42;</span></label>
             <input name="username" className="input" />
           </div>
           <div className="input-label">
-            <label htmlFor="firstname">First Name</label>
+            <label htmlFor="firstname">First Name <span className="required">&#42;</span></label>
             <input name="firstname" className="input" />
           </div>
           <div className="input-label">
-            <label htmlFor="lastname">Last Name</label>
+            <label htmlFor="lastname">Last Name <span className="required">&#42;</span></label>
             <input name="lastname" className="input" />
           </div>
           <div className="input-label">
-            <label htmlFor="dob">Date of Birth</label>
+            <label htmlFor="dob">Date of Birth <span className="required">&#42;</span></label>
             <input name="dob" className="input" />
           </div>
           <button type="submit">Create Account Now</button>

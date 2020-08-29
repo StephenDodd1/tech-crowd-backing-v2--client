@@ -109,18 +109,18 @@ input {
 }
 label,
 select {
-  font-size: 20px;
+  font-size: 15px;
 }
 label {
   display: inline-block;
-  width: 200px;
+  width: 100px;
   text-align: right;
   padding-right: 10px;
 }
 input,
 textarea {
   border-radius: 4px;
-  width: 180px;
+  width: 154px;
   background: white;
 }
 textarea {
@@ -206,7 +206,24 @@ a > .fa {
 .comment-header {
   background: white;
 }
-@media only screen and (min-width: 450px) {
+.required{ 
+  color: red;
+}
+#signup-form-container, #login-container {
+  width: 320px;
+  margin: auto;
+}
+@media only screen and (min-width: 460px) {
+  #signup-form-container, #login-container {
+    width: 460px;
+  }
+  label, select {
+    font-size: 20px;
+  }
+  label {width: 200px;}
+  input, textarea {
+    width: 180px;
+  }
   h1 {
     width: 450px;
     font-size: 45px;

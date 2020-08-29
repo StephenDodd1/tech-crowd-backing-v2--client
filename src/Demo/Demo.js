@@ -25,7 +25,6 @@ export default class Demo extends Component {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         this.setState({ posts: data });
       });
   }
@@ -45,19 +44,16 @@ export default class Demo extends Component {
         if (!posts) {
           return alert("No results matched your search.");
         } else {
-          console.log(posts);
           return posts.json();
         }
       })
       .then((data) => {
-        console.log(data);
         return this.setState({ posts: data });
       });
     e.target.reset();
   };
 
   render() {
-    console.log("demo render ran");
     return (
       <div id="forum-container">
         <div id="forum-controls">

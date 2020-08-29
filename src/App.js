@@ -6,6 +6,7 @@ import Signup from "./Signup/Signup";
 import Login from "./Login/Login";
 import Demo from "./Demo/Demo";
 import CreatePost from "./CreatePost/CreatePost";
+import Contact from './Contact/Contact'
 import { Route, Switch, Redirect, withRouter } from "react-router-dom";
 import config from "./config";
 import "./App.css";
@@ -21,16 +22,15 @@ class App extends Component {
     this.login = this.login.bind(this);
   }
   logout() {
-    console.log("logout ran");
     this.setState({ user: {} });
+    return this.props.history.push('/')
   }
   login(userid) {
     this.setState({ user: { userId: userid } });
   }
   createPost = (e) => {
-    console.log(this.context);
-    console.log(e.target.user_id.value);
     e.preventDefault();
+    if(e.target.user_id.value) {
     const type = e.target.type.value;
     const title = e.target.title.value;
     const content = e.target.content.value;
@@ -57,7 +57,9 @@ class App extends Component {
           posts: data,
         })
       )
-      .then((res) => this.props.history.push("/"));
+      .then((res) => this.props.history.push("/Demo"));
+    }
+    else alert('You must be logged in to create a post')
   };
   render() {
     const value = {
@@ -68,14 +70,14 @@ class App extends Component {
     return (
       <UserContext.Provider value={value}>
         <div className="App">
-          <Header />
+          <Header user={this.state.user}/>
           <Switch>
             <Route exact path="/">
               <Redirect to="/home" />
             </Route>
             <Route path="/home" component={Landing} />
             <Route path="/Signup/" component={Signup} />
-
+            <Route path="/Contact/" component={Contact} />
             <UserContext.Consumer>
               {({ user, loginUser, logoutUser }) => {
                 return (

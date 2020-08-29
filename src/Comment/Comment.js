@@ -10,7 +10,7 @@ class Comment extends Component {
   static contextType = UserContext;
   submitComment = (e) => {
     e.preventDefault();
-    console.log(this.context)
+    if(this.context.user.userId){
     const comment = e.target.comment.value;
     const userid = this.context.user.userId;
     const addedComment = { comment, userid };
@@ -28,6 +28,8 @@ class Comment extends Component {
       .then(res=> {
         this.props.history.push("/Demo");
       })
+    }
+    else alert('You must be logged in to comment')
   };
   render() {
     return (
