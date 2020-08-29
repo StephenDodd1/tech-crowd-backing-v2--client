@@ -60,7 +60,7 @@ class CreatePost extends Component {
           <button className="submit-post" type="submit">
             Submit
           </button>
-          <button type="click" onClick={() => {history.push('/Demo')}}>Cancel</button>
+          <button type="click" onClick={() => {this.props.history.push('/Demo')}}>Cancel</button>
         </form>
       </div>
     );

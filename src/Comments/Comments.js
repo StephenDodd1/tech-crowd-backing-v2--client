@@ -53,7 +53,7 @@ export default class Comments extends Component {
         {this.state.comments.map((comment, i) => {
           return (
             <li className="comment-box" key={i}>
-              <h5>
+              <h5 className='comment-header'>
                 Posted by: {comment.userId} {" "}
                 {moment(comment.post_date).fromNow()}
               </h5>
