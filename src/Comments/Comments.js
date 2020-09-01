@@ -12,7 +12,6 @@ export default class Comments extends Component {
 
   handleDelete = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
     fetch(`${config.API_ENDPOINT}/api/comments/${e.target.value}`, {
       method: "DELETE",
       mode: "cors",
@@ -24,7 +23,6 @@ export default class Comments extends Component {
     }).then(
       this.setState({
         comments: this.state.comments.filter((comments) => {
-          console.log(comments.commentId);
           return comments.commentId !== Number(e.target.value);
         }),
       })

@@ -28,6 +28,7 @@ class App extends Component {
   }
   createPost = (e) => {
     e.preventDefault();
+    if(this.context.user.userId) {
     const type = e.target.type.value;
     const title = e.target.title.value;
     const content = e.target.content.value;
@@ -55,6 +56,8 @@ class App extends Component {
         })
       )
       .then((res) => this.props.history.push("/"));
+    }
+    else alert('You must be logged in to create a post')
   };
   render() {
     const value = {
