@@ -28,7 +28,7 @@ class App extends Component {
   }
   createPost = (e) => {
     e.preventDefault();
-    if(this.context.user.userId) {
+    if(e.target.user_id.value) {
     const type = e.target.type.value;
     const title = e.target.title.value;
     const content = e.target.content.value;
