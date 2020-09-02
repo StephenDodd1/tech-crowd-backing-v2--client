@@ -113,7 +113,9 @@ class App extends Component {
                 );
               }}
             </UserContext.Consumer>
-            <Route path="/*" render={() => <Login />}/>
+            <Route path="/:route">
+              <Redirect to="/Demo" />
+            </Route>
           </Switch>
         </div>
       </UserContext.Provider>
