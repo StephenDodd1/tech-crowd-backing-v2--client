@@ -76,6 +76,7 @@ class App extends Component {
             </Route>
             <Route path="/home" component={Landing} />
             <Route path="/Signup/" component={Signup} />
+            <Route path="/Contact/" component={Contact} />
             <UserContext.Consumer>
               {({ user, loginUser, logoutUser }) => {
                 return (
