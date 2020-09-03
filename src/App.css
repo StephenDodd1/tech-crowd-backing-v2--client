@@ -209,6 +209,10 @@ a > .fa {
 .required{ 
   color: red;
 }
+#signup-form-container, #login-container {
+  width: 320px;
+  margin: auto
+}
 @media only screen and (min-width: 460px) {
   label, select {
     font-size: 20px;

@@ -46,7 +46,7 @@ export default class Signup extends Component {
   };
   render() {
     return (
-      <div name="signup-form-container">
+      <div id="signup-form-container">
         <h3>Signup -- TechCrowdBacking</h3>
         <form onSubmit={this.handleSignup}>
           <div className="input-label">
