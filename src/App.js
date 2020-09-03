@@ -6,6 +6,7 @@ import Signup from "./Signup/Signup";
 import Login from "./Login/Login";
 import Demo from "./Demo/Demo";
 import CreatePost from "./CreatePost/CreatePost";
+import Contact from './Contact/Contact'
 import { Route, Switch, Redirect, withRouter } from "react-router-dom";
 import config from "./config";
 import "./App.css";
