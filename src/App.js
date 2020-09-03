@@ -22,7 +22,7 @@ class App extends Component {
   }
   logout() {
     this.setState({ user: {} });
-    return this.history.push('/')
+    return this.props.history.push('/')
   }
   login(userid) {
     this.setState({ user: { userId: userid } });
