@@ -56,7 +56,7 @@ class App extends Component {
           posts: data,
         })
       )
-      .then((res) => this.props.history.push("/"));
+      .then((res) => this.props.history.push("/Demo"));
     }
     else alert('You must be logged in to create a post')
   };
