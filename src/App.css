@@ -209,7 +209,7 @@ a > .fa {
 .required{ 
   color: red;
 }
-@media only screen and (min-width: 450px) {
+@media only screen and (min-width: 460px) {
   label, select {
     font-size: 20px;
   }
