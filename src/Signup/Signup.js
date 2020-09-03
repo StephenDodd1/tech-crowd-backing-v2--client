@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import config from "../config";
 
 export default class Signup extends Component {
+  constructor(props){
+    super(props);
+  }
   handleSignup = (e) => {
     e.preventDefault();
     const t = e.target;
