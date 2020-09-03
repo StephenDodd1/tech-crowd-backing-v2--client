@@ -69,7 +69,7 @@ class App extends Component {
     return (
       <UserContext.Provider value={value}>
         <div className="App">
-          <Header />
+          <Header user={this.state.user}/>
           <Switch>
             <Route exact path="/">
               <Redirect to="/home" />
