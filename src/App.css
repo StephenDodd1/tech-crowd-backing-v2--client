@@ -109,18 +109,17 @@ input {
 }
 label,
 select {
-  font-size: 20px;
+  font-size: 18px;
 }
 label {
   display: inline-block;
-  width: 200px;
   text-align: right;
   padding-right: 10px;
 }
 input,
 textarea {
   border-radius: 4px;
-  width: 180px;
+  width: 100px;
   background: white;
 }
 textarea {
@@ -207,6 +206,13 @@ a > .fa {
   background: white;
 }
 @media only screen and (min-width: 450px) {
+  label, select {
+    font-size: 20px;
+  }
+  label {width: 200px;}
+  input, textarea {
+    width: 180px;
+  }
   h1 {
     width: 450px;
     font-size: 45px;
