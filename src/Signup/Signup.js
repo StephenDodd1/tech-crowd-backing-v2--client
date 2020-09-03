@@ -36,7 +36,8 @@ export default class Signup extends Component {
         if (!res.ok) {
           throw new Error("Something went wrong");
         }
-        return res.json(200, alert("user created"));
+        res.json(200, alert("user created"));
+        return this.history.push('/Demo')
       });
     }
   };
