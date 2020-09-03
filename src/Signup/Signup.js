@@ -40,7 +40,7 @@ export default class Signup extends Component {
           throw new Error("Something went wrong");
         }
         res.json(200, alert("user created"));
-        return this.history.push('/Demo')
+        return this.props.history.push('/Demo')
       });
     }
   };
