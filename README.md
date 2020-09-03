@@ -1,6 +1,13 @@
 # TechCrowdBacking.com Client
 
-https://TechCrowdBacking.com
+https://TechCrowdBacking.com 
+
+For testing use credentials: 
+
+username: test1 
+
+password: Password1!
+
 React front-end connects to a Node.js Express server API.
 
 ## About
