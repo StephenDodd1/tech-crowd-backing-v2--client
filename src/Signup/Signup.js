@@ -50,11 +50,11 @@ export default class Signup extends Component {
         <h3>Signup -- TechCrowdBacking</h3>
         <form onSubmit={this.handleSignup}>
           <div className="input-label">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Email <span className="required">&#42;</span></label>
             <input name="email" className="input" />
           </div>
           <div className="input-label">
-            <label htmlFor="password">Create Password</label>
+            <label htmlFor="password">Create Password <span className="required">&#42;</span></label>
             <input name="password" type="password" className="input" />
           </div>
           <div className="input-label">
@@ -62,19 +62,19 @@ export default class Signup extends Component {
             <input name="confirm-password" type="password" className="input" />
           </div>
           <div className="input-label">
-            <label htmlFor="username">Screen Name</label>
+            <label htmlFor="username">Username <span className="required">&#42;</span></label>
             <input name="username" className="input" />
           </div>
           <div className="input-label">
-            <label htmlFor="firstname">First Name</label>
+            <label htmlFor="firstname">First Name <span className="required">&#42;</span></label>
             <input name="firstname" className="input" />
           </div>
           <div className="input-label">
-            <label htmlFor="lastname">Last Name</label>
+            <label htmlFor="lastname">Last Name <span className="required">&#42;</span></label>
             <input name="lastname" className="input" />
           </div>
           <div className="input-label">
-            <label htmlFor="dob">Date of Birth</label>
+            <label htmlFor="dob">Date of Birth <span className="required">&#42;</span></label>
             <input name="dob" className="input" />
           </div>
           <button type="submit">Create Account Now</button>

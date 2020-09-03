@@ -113,6 +113,7 @@ select {
 }
 label {
   display: inline-block;
+  width: 100px;
   text-align: right;
   padding-right: 10px;
 }
@@ -204,6 +205,9 @@ a > .fa {
 }
 .comment-header {
   background: white;
+}
+.required{ 
+  color: red;
 }
 @media only screen and (min-width: 450px) {
   label, select {
