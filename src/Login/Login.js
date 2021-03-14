@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import config from "../config";
 import LoginService from "./login-service";
-import { UserContext } from '../Context'
+import { UserContext } from "../Context";
 
 export default class Login extends Component {
   static defaultProps = {
@@ -18,7 +18,7 @@ export default class Login extends Component {
       userId: null,
     };
   }
-  static contextType=UserContext;
+  static contextType = UserContext;
 
   handleSubmitBasicAuth = (e) => {
     e.preventDefault();
@@ -40,8 +40,8 @@ export default class Login extends Component {
       .then((res) => res.json())
       .then((data) => {
         window.localStorage.setItem(config.JWT_TOKEN, data.data.jwtToken);
-        this.setState({userId: data.data.user.userid})
-        this.context.loginUser(data.data.user.userid)
+        this.setState({ userId: data.data.user.userid });
+        this.context.loginUser(data.data.user.userid);
         return this.onLoginSuccess();
       });
     username.value = "";
@@ -56,8 +56,7 @@ export default class Login extends Component {
     return (
       <div id="login-container">
         <h3>LOGIN -- TechCrowdBacking</h3>
-        <form onSubmit={this.handleSubmitBasicAuth
-         }>
+        <form onSubmit={this.handleSubmitBasicAuth}>
           <div className="input-label">
             <label htmlFor="username">Username</label>
             <input id="username" name="username" className="input" />
@@ -75,7 +74,6 @@ export default class Login extends Component {
           <button type="submit">Submit</button>
         </form>
       </div>
-      )}
-     
+    );
   }
-
+}
