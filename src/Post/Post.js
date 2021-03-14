@@ -37,9 +37,9 @@ class Post extends Component {
         }
         return res.json();
       })
-      .then(res=> {
+      .then((res) => {
         this.props.history.push("/");
-      })
+      });
   };
 
   updateComments = () => {
