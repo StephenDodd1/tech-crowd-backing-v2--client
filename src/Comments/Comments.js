@@ -54,6 +54,7 @@ export default class Comments extends Component {
   }
 
   render() {
+    console.log(this.state.comments)
     return (
       <ul id="comments-box">
         {this.state.comments.map((comment, i) => {
