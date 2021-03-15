@@ -16,7 +16,7 @@ export default class Comments extends Component {
     e.preventDefault();
     const userId = this.context.user.userId
     if(userId !== e.target.name){
-      console.log(userId,e)
+      console.log(this.context.user,e)
       alert(`${userId} you cannot delete posts you did not create. Do you need to sign into the account for ${e.target.name}?`)
       return;
     }
