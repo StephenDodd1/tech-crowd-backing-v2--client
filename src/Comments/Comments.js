@@ -15,6 +15,7 @@ export default class Comments extends Component {
   handleDelete = (e, uid) => {
     e.preventDefault();
     if(uid !== e.name.userId){
+      console.log(uid,e)
       alert(`${uid} you cannot delete posts you did not create. Do you need to sign into the account for ${e.name.userId}?`)
       return;
     }
