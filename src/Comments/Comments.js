@@ -61,7 +61,7 @@ export default class Comments extends Component {
           return (
             <li className="comment-box" key={i}>
               <h5 className='comment-header'>
-                Posted by: {comment.userId} {" "}
+                Posted by: {comment.username} {" "}
                 {moment(comment.comment_date).fromNow()}
               </h5>
               <p className="comment-content">{comment.comment}</p>
