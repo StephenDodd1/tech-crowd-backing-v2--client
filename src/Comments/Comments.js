@@ -12,10 +12,12 @@ export default class Comments extends Component {
     }
   }
 
-  handleDelete = (e, uid) => {
+  handleDelete = (e) => {
     e.preventDefault();
-    if(uid !== e.name.userId){
-      alert(`${uid} you cannot delete posts you did not create. Do you need to sign into the account for ${e.name.userId}?`)
+    const userId = this.context.user.userId
+    if(userId !== e.target.name){
+      console.log(this.context.user,e)
+      alert(`${userId} you cannot delete posts you did not create. Do you need to sign into the account for ${e.target.name}?`)
       return;
     }
     fetch(`${config.API_ENDPOINT}/api/comments/${e.target.value}`, {
@@ -52,21 +54,21 @@ export default class Comments extends Component {
   }
 
   render() {
-    const userId = this.context.user.userId;
+    console.log(this.state.comments)
     return (
       <ul id="comments-box">
         {this.state.comments.map((comment, i) => {
           return (
             <li className="comment-box" key={i}>
               <h5 className='comment-header'>
-                Posted by: {comment.userId} {" "}
+                Posted by: {comment.username} {" "}
                 {moment(comment.comment_date).fromNow()}
               </h5>
               <p className="comment-content">{comment.comment}</p>
               <button
                 className="delete-button"
                 type="click"
-                onClick={(e, uid) =>this.handleDelete(e, userId)}
+                onClick={(e) =>this.handleDelete(e)}
                 value={comment.commentId}
                 name={comment.userId}
               >
