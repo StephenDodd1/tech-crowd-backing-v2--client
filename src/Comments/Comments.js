@@ -15,7 +15,6 @@ export default class Comments extends Component {
   handleDelete = (e) => {
     e.preventDefault();
     const userId = this.context.user.userId
-    console.log(userId, e.target.name)
     if(userId !== Number(e.target.name)){
       alert(`You cannot delete comments you did not create.`)
       return;
