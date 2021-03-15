@@ -14,8 +14,8 @@ export default class Comments extends Component {
 
   handleDelete = (e, uid) => {
     e.preventDefault();
-    if(uid.userId !== e.name.userId){
-      alert(`${uid.userId} you cannot delete posts you did not create. Do you need to sign into the account for ${e.name.userId}?`)
+    if(uid !== e.name.userId){
+      alert(`${uid} you cannot delete posts you did not create. Do you need to sign into the account for ${e.name.userId}?`)
       return;
     }
     fetch(`${config.API_ENDPOINT}/api/comments/${e.target.value}`, {
