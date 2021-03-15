@@ -12,9 +12,9 @@ export default class Comments extends Component {
     }
   }
 
-  handleDelete = (e) => {
+  handleDelete = (e, uid) => {
     e.preventDefault();
-    if(e.userId !== e.name.userId){
+    if(uid.userId !== e.name.userId){
       alert(`${e.userId} you cannot delete posts you did not create. Do you need to sign into the account for ${e.name.userId}?`)
       return;
     }
@@ -66,7 +66,7 @@ export default class Comments extends Component {
               <button
                 className="delete-button"
                 type="click"
-                onClick={() =>this.handleDelete(userId)}
+                onClick={(e, uid) =>this.handleDelete(e, userId)}
                 value={comment.commentId}
                 name={comment.userId}
               >
