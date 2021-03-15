@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import config from "../config";
 import moment from "moment";
+import { UserContext } from '../Context'
 
 export default class Comments extends Component {
+  static contextType = UserContext
   constructor(props) {
     super(props);
     this.state = {
@@ -12,6 +14,10 @@ export default class Comments extends Component {
 
   handleDelete = (e) => {
     e.preventDefault();
+    if(e.userId !== e.name.userId){
+      alert(`${e.userId} you cannot delete posts you did not create. Do you need to sign into the account for ${e.name.userId}?`)
+      return;
+    }
     fetch(`${config.API_ENDPOINT}/api/comments/${e.target.value}`, {
       method: "DELETE",
       mode: "cors",
@@ -46,6 +52,7 @@ export default class Comments extends Component {
   }
 
   render() {
+    const userId = this.context.user.userId;
     return (
       <ul id="comments-box">
         {this.state.comments.map((comment, i) => {
@@ -59,7 +66,7 @@ export default class Comments extends Component {
               <button
                 className="delete-button"
                 type="click"
-                onClick={this.handleDelete}
+                onClick={() =>this.handleDelete(userId)}
                 value={comment.commentId}
                 name={comment.userId}
               >
