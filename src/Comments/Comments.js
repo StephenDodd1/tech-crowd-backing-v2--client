@@ -11,29 +11,31 @@ export default class Comments extends Component {
       comments: [],
     }
   }
-
+  handleDelete = this.handleDelete.bind(this)
   handleDelete = (e) => {
     e.preventDefault();
-    const userId = this.context.user.userId
-    if(userId !== Number(e.target.name)){
-      alert(`You cannot delete comments you did not create.`)
-      return;
+    if(e.target.className === 'delete-button'){
+      const userId = this.context.user.userId
+      if(userId !== Number(e.target.name)){
+        alert(`You cannot delete comments you did not create.`)
+        return;
+      }
+      fetch(`${config.API_ENDPOINT}/api/comments/${e.target.value}`, {
+        method: "DELETE",
+        mode: "cors",
+        credentials: "same-origin",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${config.API_TOKEN}`,
+        },
+      }).then(
+        this.setState({
+          comments: this.state.comments.filter((comments) => {
+            return comments.commentId !== Number(e.target.value);
+          }),
+        })
+      );
     }
-    fetch(`${config.API_ENDPOINT}/api/comments/${e.target.value}`, {
-      method: "DELETE",
-      mode: "cors",
-      credentials: "same-origin",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `Bearer ${config.API_TOKEN}`,
-      },
-    }).then(
-      this.setState({
-        comments: this.state.comments.filter((comments) => {
-          return comments.commentId !== Number(e.target.value);
-        }),
-      })
-    );
   };
 
   componentDidMount() {
@@ -55,7 +57,7 @@ export default class Comments extends Component {
   render() {
     console.log(this.state.comments)
     return (
-      <ul id="comments-box">
+      <ul id="comments-box" onClick={this.handleDelete}>
         {this.state.comments.map((comment, i) => {
           return (
             <li className="comment-box" key={i}>
@@ -67,7 +69,6 @@ export default class Comments extends Component {
               <button
                 className="delete-button"
                 type="click"
-                onClick={(e) =>this.handleDelete(e)}
                 value={comment.commentId}
                 name={comment.userId}
               >

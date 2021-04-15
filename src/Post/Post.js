@@ -45,11 +45,6 @@ class Post extends Component {
   updateComments = () => {
     return window.location.reload(false);
   };
-  componentDidUpdate() {
-    if (this.props.posts !== this.state.posts) {
-      this.setState({ posts: this.props.posts });
-    }
-  }
 
   render() {
     return (
