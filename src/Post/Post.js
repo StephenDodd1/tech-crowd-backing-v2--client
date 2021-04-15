@@ -24,7 +24,6 @@ class Post extends Component {
     fetch(`${config.API_ENDPOINT}/api/post/${e.target.post_id.value}`, {
       method: "PATCH",
       mode: "cors",
-      credentials: "same-origin",
       headers: {
         "Content-type": "application/json",
         Authorization: `Bearer ${config.API_TOKEN}`,

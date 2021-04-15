@@ -14,6 +14,7 @@ export default class Demo extends Component {
   }
   static contextType = UserContext;
   componentDidMount() {
+    console.log(config.API_TOKEN)
     fetch(`${config.API_ENDPOINT}/api/posts`, {
       method: "GET",
       mode: "cors",
