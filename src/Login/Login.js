@@ -39,6 +39,7 @@ export default class Login extends Component {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data)
         window.localStorage.setItem(config.JWT_TOKEN, data.data.jwtToken);
         this.setState({ userId: data.data.user.userid });
         this.context.loginUser(data.data.user.userid);
