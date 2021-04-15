@@ -29,6 +29,7 @@ export default class Login extends Component {
     fetch(`${config.API_ENDPOINT}/api/user`, {
       method: "POST",
       mode: "cors",
+      credentials: "same-origin",
       headers: {
         "Content-type": "application/json",
         Authorization: `basic ${LoginService.getAuthToken()}, Bearer ${
